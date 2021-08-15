@@ -14,7 +14,8 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	[SerializeField]
 	LayerMask mask;
 	Transform mainCamera,
-		cameraPoint;
+		cameraPoint,
+		root;
 	RaycastHit cameraHit;
 	float range;
 
@@ -24,6 +25,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
     {
         mainCamera = Camera.main.transform;
 		cameraPoint = transform.GetChild(0);
+		root = transform.root;
 
 		range = Vector3.Distance(transform.position, cameraPoint.position);
     }
@@ -50,9 +52,9 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		mainCamera.position = newPosition;
 
 		// ray check
-		var rayDirection = mainCamera.position - transform.position;
+		var rayDirection = mainCamera.position - root.position;
 		rayDirection.y = 0;
-		Physics.Raycast(transform.position, rayDirection, out cameraHit, range, mask);
+		Physics.Raycast(root.position, rayDirection, out cameraHit, range, mask);
 
 		var collider = cameraHit.collider;
 

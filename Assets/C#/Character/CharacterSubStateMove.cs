@@ -81,7 +81,7 @@ public class CharacterSubStateMove : CharacterState
 
 	public override State Transition()
 	{	
-		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire2))
+		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire1))
 		{
 			// attack 1
 			return blackboard.meleeAttack1SubState;
