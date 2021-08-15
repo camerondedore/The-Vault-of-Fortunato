@@ -11,7 +11,11 @@ public class CharacterSuperStateGrounded : CharacterSuperState
 
 	public override void RunState()
 	{
-
+		// center camera
+		if(blackboard.input.centerCamera > 0)
+		{
+			blackboard.cameraController.CenterCamera();
+		}
 
 		base.RunState();
 	}

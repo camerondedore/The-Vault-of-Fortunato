@@ -9,7 +9,8 @@ public class CharacterInput : MonoBehaviour
 	public Vector2 look;
 	public float jump,
 		fire1,
-		fire2;
+		fire2,
+		centerCamera;
 
 
 
@@ -20,6 +21,7 @@ public class CharacterInput : MonoBehaviour
 		jump = PlayerInput.jump;
 		fire1 = PlayerInput.fire1;
 		fire2 = PlayerInput.fire2;
+		centerCamera = PlayerInput.centerCamera;
     }
 
 
@@ -31,5 +33,6 @@ public class CharacterInput : MonoBehaviour
 		jump = 0;
 		fire1 = 0;
 		fire2 = 0;
+		centerCamera = 0;
 	}
 }

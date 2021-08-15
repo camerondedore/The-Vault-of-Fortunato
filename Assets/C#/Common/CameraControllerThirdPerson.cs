@@ -10,6 +10,8 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	/////////////////////////////////////////////////////////////
     
 	[SerializeField]
+	Transform character;
+	[SerializeField]
 	LayerMask mask;
 	Transform mainCamera,
 		cameraPoint;
@@ -45,10 +47,11 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		mainCamera.LookAt(transform);
 
 		// apply movement
-		mainCamera.position = Vector3.Lerp(mainCamera.position, newPosition, Time.fixedDeltaTime * 10);
+		mainCamera.position = newPosition;
 
 		// ray check
 		var rayDirection = mainCamera.position - transform.position;
+		rayDirection.y = 0;
 		Physics.Raycast(transform.position, rayDirection, out cameraHit, range, mask);
 
 		var collider = cameraHit.collider;
@@ -56,7 +59,21 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		if (collider != null)
 		{
 			// apply ray check
-			mainCamera.position = cameraHit.point + rayDirection.normalized * -0.1f;
+			newPosition = cameraHit.point;
+			newPosition.y = cameraPoint.position.y;
+			mainCamera.position = newPosition;
 		}
     }
+
+
+	public void CenterCamera()
+	{
+		// tether camera
+        var newDirection = character.forward;
+		var newPosition = transform.position - newDirection.normalized * range;
+		newPosition.y = cameraPoint.position.y;
+
+		// apply movement
+		mainCamera.position = Vector3.Lerp(mainCamera.position, newPosition, Time.fixedDeltaTime * 10);
+	}
 }

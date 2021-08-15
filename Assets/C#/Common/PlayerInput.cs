@@ -13,7 +13,8 @@ public class PlayerInput : MonoBehaviour
 		//aim,
 		//reload,
 		pause,
-		jump;
+		jump,
+		centerCamera;
 
 
 
@@ -56,5 +57,12 @@ public class PlayerInput : MonoBehaviour
 	public void OnPause(InputValue value)
 	{
 		pause = value.Get<float>();
+	}
+
+
+
+	public void OnCenterCamera(InputValue value)
+	{
+		centerCamera = value.Get<float>();
 	}
 }

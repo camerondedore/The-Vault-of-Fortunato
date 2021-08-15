@@ -12,9 +12,15 @@ public class CharacterSuperStateRidePlatform : CharacterSuperState
 	public override void RunState()
 	{
 		// parent to platform
-		if(blackboard.root.parent != blackboard.feet.GetGround().transform)
+		if(blackboard.feet.GetGround() != null && blackboard.root.parent != blackboard.feet.GetGround().transform)
 		{
 			blackboard.root.parent = blackboard.feet.GetGround().transform;
+		}
+
+		// center camera
+		if(blackboard.input.centerCamera > 0)
+		{
+			blackboard.cameraController.CenterCamera();
 		}
 
 		base.RunState();

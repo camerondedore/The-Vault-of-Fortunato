@@ -81,7 +81,7 @@ public class CharacterStateJump : CharacterState
 		blackboard.jumpStartAltitude = transform.root.position.y;
 
 		// sound
-		blackboard.charAud.PlayJump();
+		//blackboard.charAud.PlayJump();
 
 		// set look y
 		blackboard.cameraPivotController.pauseY = true;
