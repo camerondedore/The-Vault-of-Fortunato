@@ -6,6 +6,8 @@ public class CharacterSubStateMeleeAttack1 : CharacterState
 {
 
 	[SerializeField]
+	GameObject display;
+	[SerializeField]
 	float attackTime = 0.4f,
 		meleeTime = 0.2f;
 	float startTime;
@@ -60,7 +62,16 @@ public class CharacterSubStateMeleeAttack1 : CharacterState
 			
 			// attack
 			blackboard.melee.Attack();
-		}		
+
+			display.SetActive(true);
+		}
+
+
+		// tmp hide display
+		if(Time.time > startTime + meleeTime + 0.1f)
+		{
+			display.SetActive(false);
+		}
 	}
 
 
