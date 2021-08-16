@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.03071345, g: 0.07421358, b: 0.19120172, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.41960788, g: 0.4784314, b: 0.627451, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 28ebd5ae0383ac246b5bd9f91d2d26d3, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -534,7 +534,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137410574}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -2528,7 +2528,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3560,8 +3560,6 @@ GameObject:
   - component: {fileID: 1461752110}
   - component: {fileID: 1461752109}
   - component: {fileID: 1461752108}
-  - component: {fileID: 1461752107}
-  - component: {fileID: 1461752106}
   m_Layer: 0
   m_Name: Character Machine
   m_TagString: Untagged
@@ -3583,38 +3581,6 @@ Transform:
   m_Father: {fileID: 1092938452}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1461752106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461752103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698445cc989bf934a90e1edd8d1ed393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackboard: {fileID: 0}
-  display: {fileID: 137410574}
-  attackTime: 0.6
-  meleeTime: 0.2
---- !u!114 &1461752107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461752103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf058cd67e73f1428436a7b725c4536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blackboard: {fileID: 0}
-  display: {fileID: 137410574}
-  attackTime: 0.4
-  meleeTime: 0.2
 --- !u!114 &1461752108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3629,7 +3595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackboard: {fileID: 0}
   display: {fileID: 137410574}
-  attackTime: 0.4
+  attackTime: 0.5
   meleeTime: 0.2
 --- !u!114 &1461752109
 MonoBehaviour:
@@ -3778,9 +3744,7 @@ MonoBehaviour:
   jumpState: {fileID: 1461752111}
   slideState: {fileID: 1461752110}
   dieState: {fileID: 1461752109}
-  meleeAttack1SubState: {fileID: 1461752108}
-  meleeAttack2SubState: {fileID: 1461752107}
-  meleeAttack3SubState: {fileID: 1461752106}
+  meleeAttackSubState: {fileID: 1461752108}
   root: {fileID: 1092938452}
   agent: {fileID: 1092938451}
   cameraController: {fileID: 82100017}

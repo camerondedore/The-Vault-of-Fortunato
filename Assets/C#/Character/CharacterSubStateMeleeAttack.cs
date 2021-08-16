@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSubStateMeleeAttack2 : CharacterState
+public class CharacterSubStateMeleeAttack : CharacterState
 {
 
 	[SerializeField]
@@ -10,9 +10,10 @@ public class CharacterSubStateMeleeAttack2 : CharacterState
 	[SerializeField]
 	float attackTime = 0.4f,
 		meleeTime = 0.2f;
-	float startTime;
-	bool queueAttack = false,
-		meleeDamage = false;
+	float startTime,
+		endTime;
+	int attackNumber = 1;
+	bool meleeDamage = false;
 
 
 
@@ -53,9 +54,6 @@ public class CharacterSubStateMeleeAttack2 : CharacterState
 		}
 		blackboard.character.forward = Vector3.Slerp(blackboard.character.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
 
-		// get input
-		queueAttack = blackboard.fire1Disconnector.Trip(blackboard.input.fire2);
-
 		if(!meleeDamage && Time.time > startTime + meleeTime)
 		{
 			meleeDamage = true;
@@ -64,7 +62,8 @@ public class CharacterSubStateMeleeAttack2 : CharacterState
 			blackboard.melee.Attack();
 
 			display.SetActive(true);
-		}		
+		}
+
 
 		// tmp hide display
 		if(Time.time > startTime + meleeTime + 0.1f)
@@ -85,13 +84,29 @@ public class CharacterSubStateMeleeAttack2 : CharacterState
 
 		// reset melee
 		meleeDamage = false;
+
+		// disable hands
+		//blackboard.hands.enabled = false;
+
+		// reset attack number
+		if(endTime + 5 < Time.time)
+		{
+			attackNumber = 1;
+		}
 	}
 
 
 
 	public override void EndState()
 	{
-		
+		attackNumber++;
+
+		if(attackNumber > 3)
+		{
+			attackNumber = 1;
+		}
+
+		endTime = Time.time;
 	}
 
 
@@ -100,12 +115,6 @@ public class CharacterSubStateMeleeAttack2 : CharacterState
 	{	
 		if(startTime + attackTime < Time.time)
 		{
-			if(queueAttack)
-			{
-				// attack 3
-				return blackboard.meleeAttack3SubState;
-			}
-
 			// idle
 			return blackboard.idleSubState;		
 		}	

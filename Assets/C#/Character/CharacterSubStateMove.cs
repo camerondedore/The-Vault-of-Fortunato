@@ -83,8 +83,8 @@ public class CharacterSubStateMove : CharacterState
 	{	
 		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire1))
 		{
-			// attack 1
-			return blackboard.meleeAttack1SubState;
+			// attack
+			return blackboard.meleeAttackSubState;
 		}
 
 		if(blackboard.input.moveDirection.sqrMagnitude <= 0)

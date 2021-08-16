@@ -17,6 +17,14 @@ public class CharacterSubStateIdle : CharacterState
 
 		// move to apply gravity
 		blackboard.agent.Move((blackboard.velocity + Physics.gravity.normalized * blackboard.y) * Time.fixedDeltaTime);
+
+		// look
+		if(blackboard.velocity.sqrMagnitude > 0.1f)
+		{
+			blackboard.lookDirection = blackboard.velocity;
+			blackboard.lookDirection.y = 0;
+		}
+		blackboard.character.forward = Vector3.Slerp(blackboard.character.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
 	}
 
 
@@ -48,7 +56,7 @@ public class CharacterSubStateIdle : CharacterState
 		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire1))
 		{
 			// attack 1
-			return blackboard.meleeAttack1SubState;
+			return blackboard.meleeAttackSubState;
 		}		
 
 		if(blackboard.input.moveDirection.sqrMagnitude > 0.1f)

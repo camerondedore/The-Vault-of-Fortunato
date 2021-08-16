@@ -15,9 +15,7 @@ public class CharacterBlackboard : MonoBehaviour
 		jumpState,
 		slideState,
 		dieState,
-		meleeAttack1SubState,
-		meleeAttack2SubState,
-		meleeAttack3SubState;
+		meleeAttackSubState;
 	public Transform root;
 	public CharacterController agent;
 	public CameraControllerThirdPerson cameraController;
