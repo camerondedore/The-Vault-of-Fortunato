@@ -65,7 +65,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EmissionStrength: 3
+    - _EmissionStrength: 2
     - _FlickerMin: 0.5
     - _FlickerSpeed: 2
     - _FlickerWorldUnit: 0.5
