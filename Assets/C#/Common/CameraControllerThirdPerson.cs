@@ -17,7 +17,8 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		cameraPoint,
 		root;
 	RaycastHit cameraHit;
-	float range;
+	float range,
+		rangeFlat;
 
 
 
@@ -27,7 +28,9 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		cameraPoint = transform.GetChild(0);
 		root = transform.root;
 
+		var angle = Vector3.Angle(cameraPoint.localPosition, new Vector3(cameraPoint.localPosition.x, 0, cameraPoint.localPosition.z));
 		range = Vector3.Distance(transform.position, cameraPoint.position);
+		rangeFlat = range * Mathf.Cos(angle * Mathf.PI / 180);
     }
 
     
@@ -54,7 +57,8 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		// ray check
 		var rayDirection = mainCamera.position - root.position;
 		rayDirection.y = 0;
-		Physics.Raycast(root.position, rayDirection, out cameraHit, range, mask);
+		Physics.Raycast(root.position, rayDirection, out cameraHit, rangeFlat, mask);
+		Debug.DrawRay(root.position, rayDirection.normalized * rangeFlat);
 
 		var collider = cameraHit.collider;
 
