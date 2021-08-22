@@ -72,9 +72,9 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimDistance: 1
-    - _RimSharpness: 0.224
-    - _RimStrength: 0.67
+    - _RimDistance: 0.9
+    - _RimSharpness: 0.086
+    - _RimStrength: 1.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

@@ -3,7 +3,7 @@ Shader "Custom/RimLight"
     Properties
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Metallic ("Metallic (RGB), Smoothness (A)", 2D) = "white" {}
+        _Metallic ("Metallic (RGB), Smoothness (A)", 2D) = "black" {}
 		_RimColor ("Rim Color", Color) = (1, 1, 1, 1)
 		_RimStrength ("Rim Strength", float) = 0.5
 		_RimSharpness ("Rim Sharpness", Range(0, 0.5)) = 0.1
