@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop Candle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8200363662883492638, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8867922563372166528, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -128,6 +132,10 @@ PrefabInstance:
     - target: {fileID: 8096029823484852026, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
       propertyPath: m_Name
       value: Prop Candle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200363662883492638, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8867922563372166528, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
       propertyPath: m_RootOrder
@@ -251,6 +259,10 @@ PrefabInstance:
     - target: {fileID: 8096029823484852026, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
       propertyPath: m_Name
       value: Prop Candle (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200363662883492638, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8867922563372166528, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
       propertyPath: m_RootOrder
@@ -430,6 +442,10 @@ PrefabInstance:
     - target: {fileID: 8096029823484852026, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
       propertyPath: m_Name
       value: Prop Candle (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200363662883492638, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8867922563372166528, guid: 3b68e0e44e9f1d74f8567d2d25c3b878, type: 3}
       propertyPath: m_RootOrder
