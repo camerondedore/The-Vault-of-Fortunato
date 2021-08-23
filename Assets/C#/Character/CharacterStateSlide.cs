@@ -36,7 +36,7 @@ public class CharacterStateSlide : CharacterState
 			blackboard.lookDirection = blackboard.velocity;
 			blackboard.lookDirection.y = 0;
 		}
-		blackboard.character.forward = Vector3.Slerp(blackboard.character.forward, blackboard.lookDirection, Time.fixedDeltaTime * 15);
+		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * 15);
 
 		// clear ledge timer
 		if(!clear && !blackboard.feet.isGrounded)

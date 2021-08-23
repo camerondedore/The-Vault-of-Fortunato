@@ -53,7 +53,7 @@ public class CharacterStateFall : CharacterState
 			blackboard.lookDirection = blackboard.targetVelocity;
 			blackboard.lookDirection.y = 0;
 		}
-		blackboard.character.forward = Vector3.Slerp(blackboard.character.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
+		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
 
 		// animate
 		//blackboard.anim.SetFloat("y", blackboard.y);

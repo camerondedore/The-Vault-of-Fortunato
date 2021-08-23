@@ -19,7 +19,7 @@ public class CharacterSubStateIdle : CharacterState
 		blackboard.agent.Move((blackboard.velocity + Physics.gravity.normalized * blackboard.y) * Time.fixedDeltaTime);
 
 		// look
-		blackboard.character.forward = Vector3.Slerp(blackboard.character.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
+		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
 	}
 
 
@@ -34,7 +34,7 @@ public class CharacterSubStateIdle : CharacterState
 		blackboard.y = 1;
 
 		// set look
-		blackboard.lookDirection = blackboard.character.forward;
+		blackboard.lookDirection = blackboard.characterMesh.forward;
 
 		// enable hands
 		//blackboard.hands.enabled = true;

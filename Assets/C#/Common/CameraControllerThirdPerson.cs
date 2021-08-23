@@ -10,11 +10,12 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	/////////////////////////////////////////////////////////////
     
 	[SerializeField]
-	Transform character;
+	Transform characterMesh,
+		cameraPoint,
+		cameraY;
 	[SerializeField]
 	LayerMask mask;
 	Transform mainCamera,
-		cameraPoint,
 		root;
 	RaycastHit cameraHit;
 	float range,
@@ -25,7 +26,6 @@ public class CameraControllerThirdPerson : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main.transform;
-		cameraPoint = transform.GetChild(0);
 		root = transform.root;
 
 		var angle = Vector3.Angle(cameraPoint.localPosition, new Vector3(cameraPoint.localPosition.x, 0, cameraPoint.localPosition.z));
@@ -49,22 +49,22 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		newPosition.y = cameraPoint.position.y;
 
 		// apply look
-		mainCamera.LookAt(transform);
+		mainCamera.LookAt(cameraY);
 
 		// apply movement
 		mainCamera.position = newPosition;
 
-		// ray check
+		// ray check to root, flatten on y plane
 		var rayDirection = mainCamera.position - root.position;
 		rayDirection.y = 0;
 		Physics.Raycast(root.position, rayDirection, out cameraHit, rangeFlat, mask);
-		Debug.DrawRay(root.position, rayDirection.normalized * rangeFlat);
+		//Debug.DrawRay(root.position, rayDirection.normalized * rangeFlat);
 
 		var collider = cameraHit.collider;
 
 		if (collider != null)
 		{
-			// apply ray check
+			// apply ray check, using camera point y
 			newPosition = cameraHit.point;
 			newPosition.y = cameraPoint.position.y;
 			mainCamera.position = newPosition;
@@ -75,7 +75,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	public void CenterCamera()
 	{
 		// tether camera
-        var newDirection = character.forward;
+        var newDirection = characterMesh.forward;
 		var newPosition = transform.position - newDirection.normalized * range;
 		newPosition.y = cameraPoint.position.y;
 

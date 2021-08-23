@@ -34,7 +34,7 @@ public class CharacterSuperStateGrounded : CharacterSuperState
 		//blackboard.anim.SetTrigger("grounded");
 
 		// set character to be vertical
-		blackboard.character.forward = Vector3.ProjectOnPlane(blackboard.character.forward, Vector3.up);
+		blackboard.characterMesh.forward = Vector3.ProjectOnPlane(blackboard.characterMesh.forward, Vector3.up);
 
 		// set look y
 		blackboard.cameraPivotController.pauseY = false;

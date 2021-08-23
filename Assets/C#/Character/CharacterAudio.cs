@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CharacterAudio : MonoBehaviour
 {
+	/////////////////////////////////////////////////////
+	// This needs to be on character animator gameobject
+	/////////////////////////////////////////////////////
     
+	[SerializeField]
+	AudioSourceController aud;
 	public AudioClip[] stepSounds;
 	public AudioClip slideSound,
 		jumpSound,
 		landSound,
 		dieSound;
-	[SerializeField]
-	AudioSourceController audFeet,
-		audHead;
 	int stepSoundIndex = 0;
 
 
@@ -33,43 +35,43 @@ public class CharacterAudio : MonoBehaviour
 		}
 
 		var stepSound = stepSounds[stepSoundIndex];
-		audFeet.PlayOneShot(stepSound);
+		aud.PlayOneShot(stepSound);
 	}
 
 
 
 	public void SlideStart()
 	{
-		audFeet.source.clip = slideSound;
-		audFeet.source.Play();
+		aud.source.clip = slideSound;
+		aud.source.Play();
 	}
 
 
 
 	public void SlideStop()
 	{
-		audFeet.source.clip = null;
-		audFeet.source.Stop();
+		aud.source.clip = null;
+		aud.source.Stop();
 	}
 
 
 
 	public void PlayJump()
 	{
-		audFeet.PlayOneShot(jumpSound);
+		aud.PlayOneShot(jumpSound);
 	}
 
 
 
 	public void PlayLand()
 	{
-		audFeet.PlayOneShot(landSound);
+		aud.PlayOneShot(landSound);
 	}
 
 
 
 	public void PlayDie()
 	{
-		audHead.PlayOneShot(dieSound);
+		aud.PlayOneShot(dieSound);
 	}
 }

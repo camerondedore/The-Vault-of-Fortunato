@@ -25,7 +25,7 @@ public class CharacterBlackboard : MonoBehaviour
 	//public Animator anim;
 	public VelocityTracker tracker;
 	public CharacterAudio charAud;
-	public Transform character;
+	public Transform characterMesh;
 	public float speed = 6,
 		lookSpeed = 10,
 		stepHeight = 0.3f,
