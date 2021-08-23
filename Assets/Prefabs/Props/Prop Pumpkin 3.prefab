@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1118798985864598321}
   - component: {fileID: 2909944341740267515}
   - component: {fileID: 4585692841039412089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop Pumpkin 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

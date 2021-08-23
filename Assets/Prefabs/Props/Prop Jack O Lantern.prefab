@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7786985472472114019}
   - component: {fileID: 5473027271164106665}
   - component: {fileID: 6644371785886305067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop Jack O Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
