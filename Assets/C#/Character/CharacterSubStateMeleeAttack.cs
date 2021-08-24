@@ -50,7 +50,7 @@ public class CharacterSubStateMeleeAttack : CharacterState
 			blackboard.lookDirection = blackboard.velocity;
 			blackboard.lookDirection.y = 0;
 		}
-		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
+		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed * 0.5f);
 
 		if(!meleeDamage && Time.time > startTime + meleeTime)
 		{
@@ -74,9 +74,6 @@ public class CharacterSubStateMeleeAttack : CharacterState
 
 		// reset melee
 		meleeDamage = false;
-
-		// disable hands
-		//blackboard.hands.enabled = false;
 
 		// reset attack number
 		if(endTime + 5 < Time.time)
