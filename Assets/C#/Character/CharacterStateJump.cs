@@ -54,12 +54,6 @@ public class CharacterStateJump : CharacterState
 		// animate
 		//blackboard.anim.SetFloat("y", blackboard.y);
 
-		// check jump input for boost
-		// if(PlayerInput.jump <= 0)
-		// {
-		// 	queueBoost = false;
-		// }
-
 		// apply acceleration due to gravity
 		blackboard.y -= Mathf.Abs(Physics.gravity.y) * Time.fixedDeltaTime;
 	}
@@ -75,7 +69,7 @@ public class CharacterStateJump : CharacterState
 		blackboard.y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
 
 		// animate
-		//blackboard.anim.SetTrigger("jump");
+		blackboard.anim.SetTrigger("Jump");
 
 		// set tics
 		blackboard.jumpStartAltitude = transform.root.position.y;

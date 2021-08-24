@@ -5,6 +5,12 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -623603649343465320
+    second: Char Inn Keeper Idle
+  - first:
+      74: 8882321835028302698
+    second: Char Inn Keeper Jump Init
+  - first:
+      74: -623603649343465320
     second: Scene
   externalObjects: {}
   materials:
@@ -27,8 +33,8 @@ ModelImporter:
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 1
-    animationRotationError: 0.5
-    animationPositionError: 0.5
+    animationRotationError: 0.1
+    animationPositionError: 0.1
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
@@ -76,7 +82,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -89,7 +95,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: hips
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -97,7 +103,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

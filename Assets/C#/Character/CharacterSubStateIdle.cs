@@ -27,7 +27,7 @@ public class CharacterSubStateIdle : CharacterState
 	public override void StartState()
 	{
 		// idle
-		//blackboard.anim.SetFloat("timeScale", 1);
+		blackboard.anim.SetTrigger("Idle");
 
 		// reset velocity
 		blackboard.targetVelocity = Vector3.zero;

@@ -56,7 +56,7 @@ public class CharacterStateJumpInit : CharacterState
 	public override void StartState()
 	{
 		// animate
-		//blackboard.anim.SetTrigger("jump");
+		blackboard.anim.SetTrigger("Jump Init");
 
 		// set tics
 		tics = 4;

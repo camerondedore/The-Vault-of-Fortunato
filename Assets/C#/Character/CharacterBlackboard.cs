@@ -22,7 +22,7 @@ public class CharacterBlackboard : MonoBehaviour
 	public CharacterInput input;
 	public CameraPivotController cameraPivotController;
 	public GroundChecker feet;
-	//public Animator anim;
+	public Animator anim;
 	public VelocityTracker tracker;
 	public CharacterAudio charAud;
 	public Transform characterMesh;

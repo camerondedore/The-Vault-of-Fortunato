@@ -74,7 +74,7 @@ public class CharacterStateFall : CharacterState
 		blackboard.agent.stepOffset = 0;
 
 		// animate
-		//blackboard.anim.SetTrigger("fall");
+		blackboard.anim.SetTrigger("Fall");
 
 		// height when starting to fall
 		startAltitude = transform.position.y;

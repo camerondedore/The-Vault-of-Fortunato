@@ -50,24 +50,15 @@ public class CharacterSubStateMove : CharacterState
 		var realSpeed = blackboard.tracker.velocity.magnitude;
 
 		// animate
-		//blackboard.anim.SetFloat("speed", realSpeed);
-		if(realSpeed > 0.01f)
-		{
-			// run
-			//blackboard.anim.SetFloat("timeScale", realSpeed / blackboard.speed);
-		}
-		else
-		{
-			// idle
-			//blackboard.anim.SetFloat("timeScale", 1);
-		}
+		blackboard.anim.SetFloat("Time Scale", realSpeed / blackboard.speed);	
 	}
 
 
 
 	public override void StartState()
 	{
-		
+		// animate
+		blackboard.anim.SetTrigger("Walk");
 	}
 
 

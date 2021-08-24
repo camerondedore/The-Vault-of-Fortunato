@@ -45,7 +45,8 @@ public class CameraControllerThirdPerson : MonoBehaviour
 
 		// tether camera
         var newDirection = mainCamera.position - transform.position;
-		var newPosition = transform.position + newDirection.normalized * range;
+		newDirection.y = 0;
+		var newPosition = transform.position + newDirection.normalized * rangeFlat;
 		newPosition.y = cameraPoint.position.y;
 
 		// apply look
@@ -76,7 +77,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	{
 		// tether camera
         var newDirection = characterMesh.forward;
-		var newPosition = transform.position - newDirection.normalized * range;
+		var newPosition = transform.position - newDirection.normalized * rangeFlat;
 		newPosition.y = cameraPoint.position.y;
 
 		// apply movement

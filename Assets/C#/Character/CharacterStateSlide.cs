@@ -75,7 +75,7 @@ public class CharacterStateSlide : CharacterState
 
 		// animate
 		//blackboard.anim.ResetTrigger("jump");
-		//blackboard.anim.SetTrigger("slide");
+		blackboard.anim.SetTrigger("Slide");
 
 		// dust
 		//feetDust.Play();
