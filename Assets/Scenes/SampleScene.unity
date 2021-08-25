@@ -3916,9 +3916,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard: {fileID: 0}
-  display: {fileID: 0}
-  attackTime: 0.4
-  meleeTime: 0.2
+  attackTime: 0.26666668
+  meleeTime: 0.1
 --- !u!114 &1461752109
 MonoBehaviour:
   m_ObjectHideFlags: 0

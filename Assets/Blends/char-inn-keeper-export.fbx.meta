@@ -211,7 +211,7 @@ ModelImporter:
       takeName: char-plague-doctor-armature|Char Inn Keeper Attack 1
       internalID: 0
       firstFrame: 0
-      lastFrame: 5
+      lastFrame: 8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -240,7 +240,7 @@ ModelImporter:
       takeName: char-plague-doctor-armature|Char Inn Keeper Attack 2
       internalID: 0
       firstFrame: 0
-      lastFrame: 5
+      lastFrame: 8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -269,7 +269,7 @@ ModelImporter:
       takeName: char-plague-doctor-armature|Char Inn Keeper Attack 3
       internalID: 0
       firstFrame: 0
-      lastFrame: 5
+      lastFrame: 7
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

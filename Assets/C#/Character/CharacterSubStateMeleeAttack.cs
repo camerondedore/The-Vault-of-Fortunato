@@ -11,29 +11,30 @@ public class CharacterSubStateMeleeAttack : CharacterState
 	float startTime,
 		endTime;
 	int attackNumber = 1;
-	bool meleeDamage = false;
+	bool meleeDamage = false,
+		chainAttack = false;
 
 
 
 	public override void RunState()
 	{
 		// get input
-		var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
-		moveDir.y = 0;
-		moveDir.Normalize();
+		// var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
+		// moveDir.y = 0;
+		// moveDir.Normalize();
 
 		// project input on ground
-		if(blackboard.feet.isFlat)
-		{
-			// grounded
-			blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal).normalized * 
-				blackboard.speed * 0.5f;
-		}
-		else if(blackboard.feet.isFlatRay)
-		{
-			// ray grounded 
-			blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal).normalized * blackboard.speed;
-		}
+		// if(blackboard.feet.isFlat)
+		// {
+		// 	// grounded
+		// 	blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal).normalized * 
+		// 		blackboard.speed * 0.5f;
+		// }
+		// else if(blackboard.feet.isFlatRay)
+		// {
+		// 	// ray grounded 
+		// 	blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal).normalized * blackboard.speed;
+		// }
 
 		// smooth velocity to target velocity
 		blackboard.velocity = Vector3.Lerp(blackboard.velocity, blackboard.targetVelocity, (Time.time - startTime) / attackTime);
@@ -50,7 +51,7 @@ public class CharacterSubStateMeleeAttack : CharacterState
 			blackboard.lookDirection = blackboard.velocity;
 			blackboard.lookDirection.y = 0;
 		}
-		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed * 0.5f);
+		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
 
 		if(!meleeDamage && Time.time > startTime + meleeTime)
 		{
@@ -58,6 +59,11 @@ public class CharacterSubStateMeleeAttack : CharacterState
 			
 			// attack
 			blackboard.melee.Attack();
+		}
+
+		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire1))
+		{
+			chainAttack = true;
 		}
 	}
 
@@ -80,6 +86,27 @@ public class CharacterSubStateMeleeAttack : CharacterState
 		{
 			attackNumber = 1;
 		}
+
+		// set target velocity
+		blackboard.targetVelocity = Vector3.zero;		
+
+		// get input
+		var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
+		moveDir.y = 0;
+		moveDir.Normalize();
+		
+		// project input on ground
+		if(blackboard.feet.isFlat)
+		{
+			// grounded
+			blackboard.velocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal).normalized * 
+				blackboard.speed * 2f;
+		}
+		else if(blackboard.feet.isFlatRay)
+		{
+			// ray grounded 
+			blackboard.velocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal).normalized * 2 * blackboard.speed;
+		}
 	}
 
 
@@ -88,12 +115,15 @@ public class CharacterSubStateMeleeAttack : CharacterState
 	{
 		attackNumber++;
 
-		if(attackNumber > 3)
+		if(attackNumber > 2)
 		{
 			attackNumber = 1;
 		}
 
 		endTime = Time.time;
+
+		// reset chain
+		chainAttack = false;
 	}
 
 
@@ -102,9 +132,16 @@ public class CharacterSubStateMeleeAttack : CharacterState
 	{	
 		if(startTime + attackTime < Time.time)
 		{
-			// idle
-			return blackboard.idleSubState;		
-		}	
+			if(!chainAttack)
+			{
+				// idle
+				return blackboard.idleSubState;		
+			}
+
+			// attack chain
+			this.EndState();
+			this.StartState();
+		}
 
 		return this;
 	}
