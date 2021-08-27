@@ -26,7 +26,7 @@ public class CharacterAudio : MonoBehaviour
 
 
 
-	public void StepEvent()
+	public void Step()
 	{
 		var oldStepSoundIndex = stepSoundIndex;
 		while(stepSoundIndex == oldStepSoundIndex)
