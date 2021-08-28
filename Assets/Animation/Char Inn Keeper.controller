@@ -266,7 +266,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Char Inn Keeper Walk
-  m_Speed: 1.1666666
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -278,7 +278,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3144321459085116221, guid: c014c7df8b3a70a4c972629edd2e6e02, type: 3}
+  m_Motion: {fileID: 5629058311816587528, guid: c014c7df8b3a70a4c972629edd2e6e02, type: 3}
   m_Tag: 
   m_SpeedParameter: Time Scale
   m_MirrorParameter: 
