@@ -31,6 +31,9 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		var angle = Vector3.Angle(cameraPoint.localPosition, new Vector3(cameraPoint.localPosition.x, 0, cameraPoint.localPosition.z));
 		range = Vector3.Distance(transform.position, cameraPoint.position);
 		rangeFlat = range * Mathf.Cos(angle * Mathf.PI / 180);
+
+		// initialize camera look
+		mainCamera.LookAt(cameraY);
     }
 
     
