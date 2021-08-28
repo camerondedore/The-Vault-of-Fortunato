@@ -8,7 +8,6 @@ public class CharacterStateJump : CharacterState
    	[SerializeField]
 	float jumpResponseSpeed = 8,
 		jumpHeight = 2;
-	//bool queueBoost = true;
 
 
 
@@ -17,7 +16,6 @@ public class CharacterStateJump : CharacterState
 		if(blackboard.feet.headBump && blackboard.y > 0)
 		{
 			blackboard.y = 0;
-			//queueBoost = false;
 		}
 
 		// get input
@@ -51,9 +49,6 @@ public class CharacterStateJump : CharacterState
 		}
 		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
 
-		// animate
-		//blackboard.anim.SetFloat("y", blackboard.y);
-
 		// apply acceleration due to gravity
 		blackboard.y -= Mathf.Abs(Physics.gravity.y) * Time.fixedDeltaTime;
 	}
@@ -62,9 +57,6 @@ public class CharacterStateJump : CharacterState
 
 	public override void StartState()
 	{
-		// reset queue boost
-		//queueBoost = true;
-
 		// set vertical speed; v = (-2hg)>(1/2)
 		blackboard.y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
 
@@ -73,9 +65,6 @@ public class CharacterStateJump : CharacterState
 
 		// set tics
 		blackboard.jumpStartAltitude = transform.root.position.y;
-
-		// sound
-		//blackboard.charAud.PlayJump();
 
 		// set look y
 		blackboard.cameraPivotController.pauseY = true;
@@ -94,12 +83,6 @@ public class CharacterStateJump : CharacterState
 	{
 		if(blackboard.jumpStartAltitude + jumpHeight <= transform.root.position.y || blackboard.y <= 0)
 		{
-			// if(queueBoost)
-			// {
-			// 	// jump boost
-			// 	return blackboard.jumpBoostState;
-			// }
-
 			// fall
 			return blackboard.fallState;
 		}		

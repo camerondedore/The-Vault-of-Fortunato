@@ -19,8 +19,6 @@ public class CharacterStateSlide : CharacterState
 		// apply acceleration due to gravity
 		blackboard.targetVelocity += Vector3.Cross(blackboard.feet.checkFeet.normal, Vector3.Cross(blackboard.feet.checkFeet.normal, -Physics.gravity)) * Time.fixedDeltaTime;
 
-		//Debug.DrawRay(transform.position, blackboard.targetVelocity);
-
 		// get and set sliding velocity
 		if(blackboard.feet.isGrounded)
 		{
@@ -43,7 +41,8 @@ public class CharacterStateSlide : CharacterState
 		{
 			clear = true;
 			clearTimeStart = Time.time;
-			// dust
+
+			// stop dust
 			//feetDust.Stop();
 		}
 
@@ -74,7 +73,6 @@ public class CharacterStateSlide : CharacterState
 		blackboard.targetVelocity = Vector3.Cross(blackboard.feet.checkFeet.normal, Vector3.Cross(blackboard.feet.checkFeet.normal, -Physics.gravity.normalized)) * blackboard.speed;
 
 		// animate
-		//blackboard.anim.ResetTrigger("jump");
 		blackboard.anim.SetTrigger("Slide");
 
 		// dust

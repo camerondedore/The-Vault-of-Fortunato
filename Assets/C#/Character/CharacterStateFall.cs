@@ -25,6 +25,7 @@ public class CharacterStateFall : CharacterState
 		var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
 		moveDir.y = 0;
 		moveDir.Normalize();
+		
 		blackboard.targetVelocity = moveDir * blackboard.speed;
 
 		// smooth velocity to target velocity
@@ -55,9 +56,6 @@ public class CharacterStateFall : CharacterState
 		}
 		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
 
-		// animate
-		//blackboard.anim.SetFloat("y", blackboard.y);
-
 		// set look y when character has fallen below where jump started
 		// jump pauses Y so walking off edge will not be messed up by this
 		if(blackboard.cameraPivotController.pauseY && blackboard.jumpStartAltitude > transform.position.y)
@@ -84,13 +82,6 @@ public class CharacterStateFall : CharacterState
 
 	public override void EndState()
 	{
-		// sound
-		//blackboard.charAud.PlayLand();
-		
-		// animate
-		//blackboard.anim.SetTrigger("jump");
-		//blackboard.anim.ResetTrigger("fall");
-
 		// fall dust
 		//if(startAltitude - transform.position.y >= fallDustHeight )
 		//{

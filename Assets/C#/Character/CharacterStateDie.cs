@@ -15,9 +15,11 @@ public class CharacterStateDie : CharacterState
 	{
 		// clear velocity
 		blackboard.velocity = Vector3.zero;
+
 		// apply acceleration due to gravity
 		blackboard.y -= Mathf.Abs(Physics.gravity.y) * Time.fixedDeltaTime;	
 		blackboard.y = Mathf.Clamp(blackboard.y , -10, 100);
+
 		// move
 		blackboard.agent.Move((Physics.gravity.normalized * -blackboard.y) * Time.fixedDeltaTime);
 
@@ -26,9 +28,13 @@ public class CharacterStateDie : CharacterState
 		{						
 			// grounded
 			animated = true;
+
+			// animate			
 			//blackboard.anim.SetTrigger("die");
+
 			// die audio
 			blackboard.charAud.PlayDie();	
+
 			// get death time
 			deathTime = Time.time;	
 		}
@@ -43,9 +49,6 @@ public class CharacterStateDie : CharacterState
 
 	public override void StartState()
 	{
-		// anim
-		//blackboard.anim.ResetTrigger("jump");
-
 		// set look y
 		blackboard.cameraPivotController.pauseY = false;
 	}

@@ -35,9 +35,6 @@ public class CharacterSubStateIdle : CharacterState
 
 		// set look
 		blackboard.lookDirection = blackboard.characterMesh.forward;
-
-		// enable hands
-		//blackboard.hands.enabled = true;
 	}
 
 
