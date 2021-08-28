@@ -85,7 +85,7 @@ public class CharacterStateFall : CharacterState
 	public override void EndState()
 	{
 		// sound
-		blackboard.charAud.PlayLand();
+		//blackboard.charAud.PlayLand();
 		
 		// animate
 		//blackboard.anim.SetTrigger("jump");
@@ -110,8 +110,8 @@ public class CharacterStateFall : CharacterState
 				return blackboard.slideState;
 			}
 						
-			// grounded
-			return blackboard.groundedSuperState;			
+			// land
+			return blackboard.landState;			
 		}
 
 		return this;

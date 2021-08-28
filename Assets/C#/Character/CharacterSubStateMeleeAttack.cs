@@ -61,7 +61,7 @@ public class CharacterSubStateMeleeAttack : CharacterState
 			blackboard.melee.Attack();
 		}
 
-		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire1))
+		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire1) && Time.time > startTime + meleeTime * 0.75f)
 		{
 			chainAttack = true;
 		}
@@ -91,22 +91,22 @@ public class CharacterSubStateMeleeAttack : CharacterState
 		blackboard.targetVelocity = Vector3.zero;		
 
 		// get input
-		var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
-		moveDir.y = 0;
-		moveDir.Normalize();
+		// var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
+		// moveDir.y = 0;
+		// moveDir.Normalize();
 		
-		// project input on ground
-		if(blackboard.feet.isFlat)
-		{
-			// grounded
-			blackboard.velocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal).normalized * 
-				blackboard.speed * 2f;
-		}
-		else if(blackboard.feet.isFlatRay)
-		{
-			// ray grounded 
-			blackboard.velocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal).normalized * 2 * blackboard.speed;
-		}
+		// // project input on ground
+		// if(blackboard.feet.isFlat)
+		// {
+		// 	// grounded
+		// 	blackboard.velocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal).normalized * 
+		// 		blackboard.speed * 2f;
+		// }
+		// else if(blackboard.feet.isFlatRay)
+		// {
+		// 	// ray grounded 
+		// 	blackboard.velocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal).normalized * 2 * blackboard.speed;
+		// }
 	}
 
 

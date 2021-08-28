@@ -11,6 +11,7 @@ public class CharacterBlackboard : MonoBehaviour
 	public State idleSubState,
 		moveSubState,
 		fallState,
+		landState,
 		jumpStateInit,
 		jumpState,
 		slideState,
