@@ -45,7 +45,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleCurves: 0
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
@@ -57,8 +57,8 @@ ModelImporter:
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 0
-    animationRotationError: 0
-    animationPositionError: 0
+    animationRotationError: 0.1
+    animationPositionError: 0.1
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
@@ -344,7 +344,7 @@ ModelImporter:
       takeName: char-plague-doctor-armature|Char Inn Keeper Walk 1
       internalID: 0
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 47
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
