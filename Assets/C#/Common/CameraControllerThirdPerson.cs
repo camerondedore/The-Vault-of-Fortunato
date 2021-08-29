@@ -18,6 +18,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	Transform mainCamera,
 		root;
 	RaycastHit cameraHit;
+	Vector3 followPosition;
 	float range,
 		rangeFlat;
 
@@ -34,6 +35,8 @@ public class CameraControllerThirdPerson : MonoBehaviour
 
 		// initialize camera look
 		mainCamera.LookAt(cameraY);
+
+		followPosition = mainCamera.position;
     }
 
     
@@ -47,21 +50,21 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		}
 
 		// tether camera
-        var newDirection = mainCamera.position - transform.position;
+        var newDirection = followPosition - transform.position;
 		newDirection.y = 0;
-		var newPosition = transform.position + newDirection.normalized * rangeFlat;
-		newPosition.y = cameraPoint.position.y;
+		followPosition = transform.position + newDirection.normalized * rangeFlat;
+		followPosition.y = cameraPoint.position.y;
 
 		// apply look
 		//mainCamera.LookAt(cameraY);
-		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.fixedDeltaTime * 2);
+		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.deltaTime * 2);
 
-		// apply movement
-		mainCamera.position = newPosition;
+		// apply movement to stored vector
+		mainCamera.position = followPosition;
 
 		// ray check to root, flatten on y plane
-		var rayDirection = mainCamera.position - root.position;
-		rayDirection.y = 0;
+		var rayDirection = followPosition - root.position;
+		//rayDirection.y = 0;
 		Physics.Raycast(root.position, rayDirection, out cameraHit, rangeFlat, mask);
 		//Debug.DrawRay(root.position, rayDirection.normalized * rangeFlat);
 
@@ -70,7 +73,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		if (collider != null)
 		{
 			// apply ray check, using camera point y
-			newPosition = cameraHit.point;
+			var newPosition = cameraHit.point + cameraHit.normal * 0.1f;
 			newPosition.y = cameraPoint.position.y;
 			mainCamera.position = newPosition;
 		}
@@ -81,10 +84,10 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	{
 		// tether camera
         var newDirection = characterMesh.forward;
-		var newPosition = transform.position - newDirection.normalized * rangeFlat;
-		newPosition.y = cameraPoint.position.y;
+		followPosition = transform.position - newDirection.normalized * rangeFlat;
+		followPosition.y = cameraPoint.position.y;
 
 		// apply movement
-		mainCamera.position = Vector3.Lerp(mainCamera.position, newPosition, Time.fixedDeltaTime * 10);
+		mainCamera.position = Vector3.Lerp(mainCamera.position, followPosition, Time.deltaTime * 10);
 	}
 }

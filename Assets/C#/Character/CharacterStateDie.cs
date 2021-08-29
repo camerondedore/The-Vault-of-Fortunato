@@ -17,11 +17,11 @@ public class CharacterStateDie : CharacterState
 		blackboard.velocity = Vector3.zero;
 
 		// apply acceleration due to gravity
-		blackboard.y -= Mathf.Abs(Physics.gravity.y) * Time.fixedDeltaTime;	
+		blackboard.y -= Mathf.Abs(Physics.gravity.y) * Time.deltaTime;	
 		blackboard.y = Mathf.Clamp(blackboard.y , -10, 100);
 
 		// move
-		blackboard.agent.Move((Physics.gravity.normalized * -blackboard.y) * Time.fixedDeltaTime);
+		blackboard.agent.Move((Physics.gravity.normalized * -blackboard.y) * Time.deltaTime);
 
 		// die animation when grounded
 		if(blackboard.feet.isGrounded && !animated)

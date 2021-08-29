@@ -17,7 +17,7 @@ public class CharacterStateSlide : CharacterState
 	public override void RunState()
 	{
 		// apply acceleration due to gravity
-		blackboard.targetVelocity += Vector3.Cross(blackboard.feet.checkFeet.normal, Vector3.Cross(blackboard.feet.checkFeet.normal, -Physics.gravity)) * Time.fixedDeltaTime;
+		blackboard.targetVelocity += Vector3.Cross(blackboard.feet.checkFeet.normal, Vector3.Cross(blackboard.feet.checkFeet.normal, -Physics.gravity)) * Time.deltaTime;
 
 		// get and set sliding velocity
 		if(blackboard.feet.isGrounded)
@@ -26,7 +26,7 @@ public class CharacterStateSlide : CharacterState
 		}
 
 		// move
-		blackboard.agent.Move((blackboard.velocity) * Time.fixedDeltaTime);
+		blackboard.agent.Move((blackboard.velocity) * Time.deltaTime);
 
 		// look
 		if(blackboard.velocity.sqrMagnitude > 0.1f)
@@ -34,7 +34,7 @@ public class CharacterStateSlide : CharacterState
 			blackboard.lookDirection = blackboard.velocity;
 			blackboard.lookDirection.y = 0;
 		}
-		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * 15);
+		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.deltaTime * 15);
 
 		// clear ledge timer
 		if(!clear && !blackboard.feet.isGrounded)

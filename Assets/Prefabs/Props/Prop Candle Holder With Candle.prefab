@@ -64,6 +64,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2539224101058831851, guid: c3956ca86a13a5f469ad0fd992a5c888, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3708166742668156548, guid: c3956ca86a13a5f469ad0fd992a5c888, type: 3}
       propertyPath: m_RootOrder
       value: 0

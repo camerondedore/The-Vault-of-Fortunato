@@ -25,7 +25,7 @@ public class CharacterStateJump : CharacterState
 		blackboard.targetVelocity = moveDir * blackboard.speed;
 
 		// smooth velocity to target velocity
-		blackboard.velocity = Vector3.Lerp(blackboard.velocity, blackboard.targetVelocity, Time.fixedDeltaTime * jumpResponseSpeed);
+		blackboard.velocity = Vector3.Lerp(blackboard.velocity, blackboard.targetVelocity, Time.deltaTime * jumpResponseSpeed);
 
 		// move
 		if(blackboard.feet.isGrounded && blackboard.y < 0 && blackboard.feet.angle > blackboard.maxSlope)
@@ -34,11 +34,11 @@ public class CharacterStateJump : CharacterState
 			var originalMovement = (blackboard.velocity + Physics.gravity.normalized * -blackboard.y);
 			var deflectedMovement = Vector3.ProjectOnPlane(originalMovement , blackboard.feet.checkFeet.normal);
 			//deflectedMovement = deflectedMovement.normalized * originalMovement.magnitude;
-			blackboard.agent.Move(deflectedMovement * Time.fixedDeltaTime);
+			blackboard.agent.Move(deflectedMovement * Time.deltaTime);
 		}
 		else
 		{
-			blackboard.agent.Move((blackboard.velocity + Physics.gravity.normalized * -blackboard.y) * Time.fixedDeltaTime);
+			blackboard.agent.Move((blackboard.velocity + Physics.gravity.normalized * -blackboard.y) * Time.deltaTime);
 		}
 
 		// look
@@ -47,10 +47,10 @@ public class CharacterStateJump : CharacterState
 			blackboard.lookDirection = blackboard.velocity;
 			blackboard.lookDirection.y = 0;
 		}
-		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.fixedDeltaTime * blackboard.lookSpeed);
+		blackboard.characterMesh.forward = Vector3.Slerp(blackboard.characterMesh.forward, blackboard.lookDirection, Time.deltaTime * blackboard.lookSpeed);
 
 		// apply acceleration due to gravity
-		blackboard.y -= Mathf.Abs(Physics.gravity.y) * Time.fixedDeltaTime;
+		blackboard.y -= Mathf.Abs(Physics.gravity.y) * Time.deltaTime;
 	}
 
 

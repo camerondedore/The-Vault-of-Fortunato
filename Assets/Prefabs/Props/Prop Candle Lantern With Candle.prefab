@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop Candle Lantern With Candle
       objectReference: {fileID: 0}
+    - target: {fileID: 1242711408253399972, guid: 16449c721c58a4f449bf9c65d1f83ef5, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16449c721c58a4f449bf9c65d1f83ef5, type: 3}
 --- !u!4 &8678782244038159374 stripped

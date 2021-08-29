@@ -12,7 +12,7 @@ public class PickupWine : MonoBehaviour, IPickup
 
 	void FixedUpdate()
     {
-        transform.Rotate(Vector3.up, 90 * Time.fixedDeltaTime, Space.World);
+        transform.Rotate(Vector3.up, 90 * Time.deltaTime, Space.World);
     }
 
 
