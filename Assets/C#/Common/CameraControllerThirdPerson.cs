@@ -49,34 +49,37 @@ public class CameraControllerThirdPerson : MonoBehaviour
 			return;
 		}
 
-		// tether camera
+		// tether camera, set horizontal position, then vertical
         var newDirection = followPosition - transform.position;
 		newDirection.y = 0;
 		followPosition = transform.position + newDirection.normalized * rangeFlat;
 		followPosition.y = cameraPoint.position.y;
 
-		// apply look
-		//mainCamera.LookAt(cameraY);
-		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.deltaTime * 2);
-
-		// apply movement to stored vector
-		mainCamera.position = followPosition;
-
-		// ray check to root, flatten on y plane
+		// ray check to root
 		var rayDirection = followPosition - root.position;
 		//rayDirection.y = 0;
-		Physics.Raycast(root.position, rayDirection, out cameraHit, rangeFlat, mask);
-		//Debug.DrawRay(root.position, rayDirection.normalized * rangeFlat);
+		Physics.Raycast(root.position, rayDirection, out cameraHit, range, mask);
+		//Debug.DrawRay(root.position, rayDirection.normalized * range);
 
 		var collider = cameraHit.collider;
 
 		if (collider != null)
 		{
 			// apply ray check, using camera point y
-			var newPosition = cameraHit.point + cameraHit.normal * 0.1f;
+			var newPosition = cameraHit.point - rayDirection.normalized * 0.1f;
 			newPosition.y = cameraPoint.position.y;
-			mainCamera.position = newPosition;
+			mainCamera.position = Vector3.Lerp(mainCamera.position, newPosition, Time.deltaTime * 6);
 		}
+		else
+		{
+			// apply movement to stored vector
+			//mainCamera.position = followPosition;
+			mainCamera.position = Vector3.Lerp(mainCamera.position, followPosition, Time.deltaTime * 6);
+		}
+
+		// apply look
+		//mainCamera.LookAt(cameraY);
+		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.deltaTime * 3);
     }
 
 
@@ -84,10 +87,10 @@ public class CameraControllerThirdPerson : MonoBehaviour
 	{
 		// tether camera
         var newDirection = characterMesh.forward;
-		followPosition = transform.position - newDirection.normalized * rangeFlat;
+		followPosition = transform.position - newDirection.normalized * range;
 		followPosition.y = cameraPoint.position.y;
 
-		// apply movement
-		mainCamera.position = Vector3.Lerp(mainCamera.position, followPosition, Time.deltaTime * 10);
+		// apply look
+		mainCamera.forward = cameraY.position - mainCamera.position;
 	}
 }
