@@ -18,24 +18,6 @@ public class CharacterSubStateMeleeAttack : CharacterState
 
 	public override void RunState()
 	{
-		// get input
-		// var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
-		// moveDir.y = 0;
-		// moveDir.Normalize();
-
-		// project input on ground
-		// if(blackboard.feet.isFlat)
-		// {
-		// 	// grounded
-		// 	blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal).normalized * 
-		// 		blackboard.speed * 0.5f;
-		// }
-		// else if(blackboard.feet.isFlatRay)
-		// {
-		// 	// ray grounded 
-		// 	blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal).normalized * blackboard.speed;
-		// }
-
 		// smooth velocity to target velocity
 		blackboard.velocity = Vector3.Lerp(blackboard.velocity, blackboard.targetVelocity, (Time.time - startTime) / attackTime);
 
@@ -71,6 +53,12 @@ public class CharacterSubStateMeleeAttack : CharacterState
 
 	public override void StartState()
 	{
+		// reset attack number
+		if(endTime + 5 < Time.time)
+		{
+			attackNumber = 1;
+		}
+		
 		// idle
 		blackboard.anim.SetTrigger("Attack");
 		blackboard.anim.SetInteger("Attack Number", attackNumber);
@@ -80,12 +68,6 @@ public class CharacterSubStateMeleeAttack : CharacterState
 
 		// reset melee
 		meleeDamage = false;
-
-		// reset attack number
-		if(endTime + 5 < Time.time)
-		{
-			attackNumber = 1;
-		}
 
 		// set target velocity
 		blackboard.targetVelocity = Vector3.zero;
