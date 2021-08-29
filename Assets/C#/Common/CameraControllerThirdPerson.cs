@@ -68,13 +68,14 @@ public class CameraControllerThirdPerson : MonoBehaviour
 			// apply ray check, using camera point y
 			var newPosition = cameraHit.point - rayDirection.normalized * 0.1f;
 			newPosition.y = cameraPoint.position.y;
-			mainCamera.position = Vector3.Lerp(mainCamera.position, newPosition, Time.deltaTime * 6);
+			//mainCamera.position = Vector3.Lerp(mainCamera.position, newPosition, Time.deltaTime * 6);
+			mainCamera.position = newPosition;
 		}
 		else
 		{
 			// apply movement to stored vector
-			//mainCamera.position = followPosition;
-			mainCamera.position = Vector3.Lerp(mainCamera.position, followPosition, Time.deltaTime * 6);
+			mainCamera.position = followPosition;
+			//mainCamera.position = Vector3.Lerp(mainCamera.position, followPosition, Time.deltaTime * 6);
 		}
 
 		// apply look
