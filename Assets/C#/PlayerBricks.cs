@@ -18,7 +18,7 @@ public class PlayerBricks : MonoBehaviour
 		if(oldBrickCount != bricksCollected)
 		{
 			oldBrickCount = bricksCollected;
-			brickCounter.text = $"Bricks: {bricksCollected}/18";
+			brickCounter.text = $"{bricksCollected}/18";
 		}
 	}
 
