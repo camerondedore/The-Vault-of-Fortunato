@@ -19,6 +19,7 @@ public class PickupWine : MonoBehaviour, IPickup
 
 	public void Pickup(Transform player)
 	{
+		player.GetComponent<Health>().Heal(1);
 		// heal code here
 		Destroy(gameObject);
 	}

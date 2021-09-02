@@ -18,7 +18,7 @@ public class PickupBrick : MonoBehaviour, IPickup
 
 	public void Pickup(Transform player)
 	{
-		PlayerBricks.AddBrick();
+		player.GetComponent<PlayerBricks>().AddBrick();
 		// brick code here
 		Destroy(gameObject);
 	}
