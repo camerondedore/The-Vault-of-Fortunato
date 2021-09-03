@@ -10,17 +10,37 @@ public class PlayerBricksUI : MonoBehaviour
 	PlayerBricks bricks;
 	[SerializeField]
 	Text brickCounter;
+	[SerializeField]
+	RectTransform animatedBrick,
+		animatedBrickTarget;
+	Vector3 animatedBrickStartPosition;
+	float animatedBrickLerpValue = 1;
 	int oldBrickCount = -1;
 
 
 
-	void Update()
+	void Start()
+	{
+		animatedBrickStartPosition = animatedBrick.position;
+		oldBrickCount = bricks.bricksCollected;
+	}
+
+
+
+	void FixedUpdate()
 	{
 		// update UI
 		if(oldBrickCount != bricks.bricksCollected)
 		{
 			oldBrickCount = bricks.bricksCollected;
 			brickCounter.text = $"{bricks.bricksCollected}/{bricks.totalBricks}";
+
+			// reset brick animation
+			animatedBrickLerpValue = 0;
 		}
+
+		// animate Brick
+		animatedBrickLerpValue = Mathf.Clamp01(animatedBrickLerpValue + Time.deltaTime * 3);
+		animatedBrick.position = Vector3.Lerp(animatedBrickStartPosition, animatedBrickTarget.position, animatedBrickLerpValue);
 	}
 }
