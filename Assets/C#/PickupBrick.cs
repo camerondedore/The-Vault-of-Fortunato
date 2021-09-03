@@ -5,7 +5,8 @@ using UnityEngine;
 public class PickupBrick : MonoBehaviour, IPickup
 {
     
-
+	[SerializeField]
+	ParticleSystem brickFX;
 
 
 
@@ -19,6 +20,9 @@ public class PickupBrick : MonoBehaviour, IPickup
 	public void Pickup(Transform player)
 	{
 		player.GetComponent<PlayerBricks>().AddBrick();
+		// fx
+		brickFX.transform.parent = null;
+		brickFX.Play();
 		// brick code here
 		Destroy(gameObject);
 	}
