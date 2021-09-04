@@ -13,6 +13,10 @@ public class PlayerBricksUI : MonoBehaviour
 	[SerializeField]
 	RectTransform animatedBrick,
 		animatedBrickTarget;
+	[SerializeField]
+	AudioSourceController aud;
+	[SerializeField]
+	AudioClip brickPickupSound;
 	Vector3 animatedBrickStartPosition;
 	float animatedBrickLerpValue = 1;
 	int oldBrickCount = -1;
@@ -37,6 +41,9 @@ public class PlayerBricksUI : MonoBehaviour
 
 			// reset brick animation
 			animatedBrickLerpValue = 0;
+
+			// play audio
+			aud.PlayOneShot(brickPickupSound);
 		}
 
 		// animate Brick
