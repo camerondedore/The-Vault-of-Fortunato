@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7fc47ffd555774bbb9808a666cde93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 1
+  hitPoints: 3
   maxHitPoints: 3
   blackboard: {fileID: 936047520851847110}
 --- !u!114 &766617951

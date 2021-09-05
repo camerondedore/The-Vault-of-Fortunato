@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 28ebd5ae0383ac246b5bd9f91d2d26d3, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 84aad7a559d850748bd1d894099f1d42, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 1192be474568a5e458124024930af7fc, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -764,7 +764,6 @@ Transform:
   m_Children:
   - {fileID: 2101939683}
   - {fileID: 1978572780}
-  - {fileID: 1639775730}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1326,63 +1325,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d552ff5afae0994689d50a665fe7aac, type: 3}
---- !u!1001 &345784804
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 158852224}
-    m_Modifications:
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8768849152494364355, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_Name
-      value: Pickup Wine (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
 --- !u!4 &386597155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1679013186267267537, guid: d7c3b8dc91635234fa89b9e82f0290f6, type: 3}
@@ -5885,11 +5827,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7c3b8dc91635234fa89b9e82f0290f6, type: 3}
---- !u!4 &1639775730 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8768849152494364353, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-  m_PrefabInstance: {fileID: 345784804}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1646162173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9615,14 +9552,6 @@ PrefabInstance:
     - target: {fileID: 8768849152494364355, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
       propertyPath: m_Name
       value: Pickup Wine
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096018512933242148, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9848077
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096018512933242148, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.17364815
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}

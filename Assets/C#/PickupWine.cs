@@ -21,8 +21,14 @@ public class PickupWine : MonoBehaviour, IPickup
 
 	public void Pickup(Transform player)
 	{
+		var health = player.GetComponent<Health>();
+		if(health.hitPoints >= health.maxHitPoints)
+		{
+			return;
+		}
+
 		// heal
-		player.GetComponent<Health>().Heal(1);
+		health.Heal(1);
 		
 		// fx init
 		bottle.transform.parent = null;
