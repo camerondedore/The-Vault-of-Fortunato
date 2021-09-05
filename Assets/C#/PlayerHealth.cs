@@ -10,6 +10,42 @@ public class PlayerHealth : Health
 
 
 
+	void Start()
+	{
+		// init from saved data
+		hitPoints = PlayerDataManager.data.hitPoints;
+	}
+
+
+
+	public override void Damage(float dmg)
+	{
+		hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
+
+		// save data
+		PlayerDataManager.data.hitPoints = hitPoints;
+		PlayerDataManager.SaveData();
+
+		if(hitPoints == 0 && !base.dead)
+		{
+			base.dead = true;
+			Die();
+		}
+	}
+
+
+
+	public override void Heal(float hp)
+	{
+		hitPoints = Mathf.Clamp(hitPoints + hp, 0, maxHitPoints);
+
+		// save data
+		PlayerDataManager.data.hitPoints = hitPoints;
+		PlayerDataManager.SaveData();
+	}
+
+
+
 	public override void Die()
 	{
 		blackboard.machine.SetState(blackboard.dieState);

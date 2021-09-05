@@ -7,11 +7,11 @@ public class Health : MonoBehaviour
 
 	public float hitPoints = 100,
 		maxHitPoints = 100;
-	bool dead = false;
+	protected bool dead = false;
 
 
 
-	public void Damage(float dmg)
+	public virtual void Damage(float dmg)
 	{
 		hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
 
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
 
 
 
-	public void Heal(float hp)
+	public virtual void Heal(float hp)
 	{
 		hitPoints = Mathf.Clamp(hitPoints + hp, 0, maxHitPoints);
 	}

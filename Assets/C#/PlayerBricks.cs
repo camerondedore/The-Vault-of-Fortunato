@@ -11,8 +11,20 @@ public class PlayerBricks : MonoBehaviour
 
 
 
+	void Start()
+	{
+		// init from saved data
+		bricksCollected = PlayerDataManager.data.bricks;
+	}
+
+
+
 	public void AddBrick()
 	{
 		bricksCollected++;
+
+		// save data
+		PlayerDataManager.data.bricks = bricksCollected;
+		PlayerDataManager.SaveData();
 	}
 }

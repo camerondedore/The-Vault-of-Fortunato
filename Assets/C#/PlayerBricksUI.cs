@@ -27,6 +27,9 @@ public class PlayerBricksUI : MonoBehaviour
 	{
 		animatedBrickStartPosition = animatedBrick.position;
 		oldBrickCount = bricks.bricksCollected;
+
+		// init ui
+		brickCounter.text = $"{bricks.bricksCollected}/{bricks.totalBricks}";
 	}
 
 
