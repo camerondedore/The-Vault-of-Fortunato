@@ -13,6 +13,10 @@ public class PlayerHealthUI : MonoBehaviour
 	[SerializeField]
 	RectTransform animatedHeart,
 		animatedHeartTarget;
+	[SerializeField]
+	AudioSourceController aud;
+	[SerializeField]
+	AudioClip winePickupSound;
 	Vector3 animatedHeartStartPosition;
 	float animatedHeartLerpValue = 1;
 	float oldHitPoints = -1;
@@ -26,7 +30,7 @@ public class PlayerHealthUI : MonoBehaviour
 		animatedHeartTarget = hearts[((int) health.hitPoints) - 1].GetComponent<RectTransform>();
 
 		oldHitPoints = health.hitPoints;
-		
+
 		ShowOrHideHearts();
 	}
 	
@@ -39,6 +43,9 @@ public class PlayerHealthUI : MonoBehaviour
 			oldHitPoints = health.hitPoints;
 
 			ShowOrHideHearts();
+
+			// play audio
+			aud.PlayOneShot(winePickupSound);
 
 			// reset heart animation
 			animatedHeartLerpValue = 0;

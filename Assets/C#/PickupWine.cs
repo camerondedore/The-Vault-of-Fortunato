@@ -6,7 +6,9 @@ using UnityEngine;
 public class PickupWine : MonoBehaviour, IPickup
 {
     
-
+	[SerializeField]
+	Rigidbody bottle,
+		cork;
 
 
 
@@ -19,8 +21,22 @@ public class PickupWine : MonoBehaviour, IPickup
 
 	public void Pickup(Transform player)
 	{
+		// heal
 		player.GetComponent<Health>().Heal(1);
-		// heal code here
+		
+		// fx init
+		bottle.transform.parent = null;
+		cork.transform.parent = null;
+		bottle.gameObject.SetActive(true);
+		cork.gameObject.SetActive(true);
+		// fx
+		cork.AddForce(cork.transform.TransformDirection((Vector3.up + Random.insideUnitSphere * 0.1f) * 5), ForceMode.VelocityChange);
+		bottle.AddForce(bottle.transform.TransformDirection((Vector3.up + Random.insideUnitSphere * 0.1f) * -5), ForceMode.VelocityChange);
+		cork.transform.localScale *= 1.5f;
+		// cleanup
+		Destroy(cork.gameObject, 5);
+		Destroy(bottle.gameObject, 10);
+		
 		Destroy(gameObject);
 	}
 }

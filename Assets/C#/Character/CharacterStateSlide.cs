@@ -99,7 +99,7 @@ public class CharacterStateSlide : CharacterState
 
 	public override State Transition()
 	{
-		if(ticsToJump > 20)
+		if(ticsToJump > 60)
 		{
 			return blackboard.jumpState;
 		}
