@@ -9616,6 +9616,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup Wine
       objectReference: {fileID: 0}
+    - target: {fileID: 9096018512933242148, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9848077
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096018512933242148, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.17364815
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf4f6c554c4a4744f972a73fd2081d82, type: 3}
 --- !u!1001 &8773943873685604788
