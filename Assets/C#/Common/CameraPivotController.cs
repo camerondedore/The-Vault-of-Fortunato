@@ -13,8 +13,9 @@ public class CameraPivotController : MonoBehaviour
 
 
 
-	void Awake()
+	void Start()
 	{
+		transform.position = transform.parent.position;
 		targetY = transform.position.y;
 		offsetY = transform.localPosition.y;
 	}
