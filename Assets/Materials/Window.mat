@@ -68,7 +68,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DeepEmitValue: 1.5
-    - _Depth: 79.72
+    - _Depth: 3.48
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -78,7 +78,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Scale: 29.7
+    - _Scale: 1.29
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

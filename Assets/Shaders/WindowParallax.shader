@@ -9,7 +9,6 @@ Shader "Custom/WindowParallax"
 		_DeepEmitValue ("Deep Emission Value", Range(0.0, 5.0)) = 1.0
 
 		_Depth ("Depth", Float) = 0.5
-		_Scale ("Depth Scale", Float) = 0.5
     }
     SubShader
     {
@@ -36,7 +35,6 @@ Shader "Custom/WindowParallax"
 		sampler2D _DeepEmit;
 		half _DeepEmitValue;
 		half _Depth;
-		half _Scale;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -50,12 +48,9 @@ Shader "Custom/WindowParallax"
 			//float camDist = distance(IN.worldPos, _WorldSpaceCameraPos);
 
 			// calculate parallax
-			float2 offset = ParallaxOffset(1, _depth, IN.viewDir);
+			float2 offset = ParallaxOffset(1, _Depth, IN.viewDir);
 			IN.uv_DeepTex.x -= offset.x;
 			IN.uv_DeepTex.y -= offset.y;
-
-			//IN.uv_DeepTex.x = clamp(IN.uv_DeepTex.x, -1, 1);
-			//IN.uv_DeepTex.y = clamp(IN.uv_DeepTex.y, -1, 1);
 
 			// get pixel coordinates for main texture
 			half4 m = tex2D (_MainTex, IN.uv_MainTex);
