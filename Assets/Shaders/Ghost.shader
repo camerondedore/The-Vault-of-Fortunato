@@ -17,13 +17,16 @@ Shader "Custom/Ghost"
     }
     SubShader
     {
-       	Tags { "RenderType"="Opaque"}
+       	Tags { "RenderType" = "fade" "Queue" = "Transparent"}
+		Blend SrcAlpha One
+		BlendOp Add
+		ZWrite On
 		LOD 200	
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
         #pragma surface surf Standard vertex:vert
-
+ 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
 
@@ -69,7 +72,7 @@ Shader "Custom/Ghost"
 			//clip(tex2D (_MainTex, IN.uv_MainTex) - 0.5);
 
             o.Albedo = tex2D (_MainTex, IN.uv_MainTex);
-			o.Alpha = 1;
+			//o.Alpha = 0.5;
 
 			half eyeEmission = (tex2D (_MainTex, IN.uv_MainTex));
 			o.Emission = _EmissionStrength * _EmissionColor * eyeEmission;
