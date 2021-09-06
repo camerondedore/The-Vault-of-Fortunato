@@ -6,7 +6,8 @@ public class CharacterStateIntro : CharacterState
 {
 
 	[SerializeField]
-	float minTime = 2;
+	float minTime = 1,
+		startTime = 0;
 
 
 
@@ -19,10 +20,11 @@ public class CharacterStateIntro : CharacterState
 
 	public override void StartState()
 	{
+		startTime = Time.time;
 		// turn off controller
-		blackboard.cameraController.enabled = false;
+		//blackboard.cameraController.enabled = false;
 		// turn off look
-		blackboard.cameraPivotController.enabled = false;
+		//blackboard.cameraPivotController.enabled = false;
 	}
 
 
@@ -30,16 +32,16 @@ public class CharacterStateIntro : CharacterState
 	public override void EndState()
 	{
 		// turn on controller
-		blackboard.cameraController.enabled = true;
+		//blackboard.cameraController.enabled = true;
 		// turn on look
-		blackboard.cameraPivotController.enabled = true;
+		//blackboard.cameraPivotController.enabled = true;
 	}
 
 
 
 	public override State Transition()
 	{	
-		if(Time.time > minTime && (blackboard.input.jump > 0 || blackboard.input.look != Vector2.zero || blackboard.input.moveDirection != Vector3.zero))
+		if(Time.time > minTime + startTime && (blackboard.input.jump > 0 || blackboard.input.look != Vector2.zero || blackboard.input.moveDirection != Vector3.zero))
 		{
 			// ground
 			return blackboard.groundedSuperState;
