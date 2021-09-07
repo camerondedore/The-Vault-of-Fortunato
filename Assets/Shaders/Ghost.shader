@@ -3,8 +3,8 @@ Shader "Custom/Ghost"
     Properties
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_EmissionColor ("Rim Color", Color) = (1, 1, 1, 1)
-		_EmissionStrength ("Rim Strength", float) = 0.5
+		_EmissionColor ("Emission Color", Color) = (1, 1, 1, 1)
+		_EmissionStrength ("Emission Strength", float) = 0.5
 
 		_turb ("Turbulence", float) = 1
 
