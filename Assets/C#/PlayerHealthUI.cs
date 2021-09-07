@@ -44,6 +44,9 @@ public class PlayerHealthUI : MonoBehaviour
 
 			if(oldHitPoints < health.hitPoints)
 			{
+				// show animated heart
+				animatedHeart.gameObject.SetActive(true);
+
 				// play audio
 				aud.PlayOneShot(winePickupSound);
 
@@ -84,12 +87,6 @@ public class PlayerHealthUI : MonoBehaviour
 		{
 			// hide animated heart
 			animatedHeart.gameObject.SetActive(false);
-		}
-
-		if(animatedHeart.gameObject.activeSelf == false && animatedHeartLerpValue == 0)
-		{
-			// show animated heart
-			animatedHeart.gameObject.SetActive(true);
 		}
 	}
 

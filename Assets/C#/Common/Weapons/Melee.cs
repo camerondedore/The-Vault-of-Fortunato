@@ -31,6 +31,12 @@ public class Melee : MonoBehaviour
 			//Debug.Log(c.name);
 			//Debug.DrawRay(transform.position, transform.forward);
 			
+			if(c.transform.root == transform.root)
+			{
+				// don't hit self
+				return;
+			}
+			
 			// damage
 			var hitbox = c.GetComponent<IDamageable>();
 			if(hitbox != null)
