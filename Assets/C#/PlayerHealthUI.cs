@@ -40,17 +40,19 @@ public class PlayerHealthUI : MonoBehaviour
 	{
 		if(oldHitPoints != health.hitPoints)
 		{
-			oldHitPoints = health.hitPoints;
-
 			ShowOrHideHearts();
 
-			// play audio
-			aud.PlayOneShot(winePickupSound);
+			if(oldHitPoints < health.hitPoints)
+			{
+				// play audio
+				aud.PlayOneShot(winePickupSound);
 
-			// reset heart animation
-			animatedHeartLerpValue = 0;
-			animatedHeartTarget = hearts[((int) health.hitPoints) - 1].GetComponent<RectTransform>();
+				// reset heart animation
+				animatedHeartLerpValue = 0;
+				animatedHeartTarget = hearts[((int) health.hitPoints) - 1].GetComponent<RectTransform>();
+			}
 			
+			oldHitPoints = health.hitPoints;
 		}
 
 		// animate the scale of the hearts
@@ -77,6 +79,18 @@ public class PlayerHealthUI : MonoBehaviour
 		// animate heart
 		animatedHeartLerpValue = Mathf.Clamp01(animatedHeartLerpValue + Time.deltaTime * 3);
 		animatedHeart.position = Vector3.Lerp(animatedHeartStartPosition, animatedHeartTarget.position, animatedHeartLerpValue);
+
+		if(animatedHeart.gameObject.activeSelf && animatedHeartLerpValue == 1)
+		{
+			// hide animated heart
+			animatedHeart.gameObject.SetActive(false);
+		}
+
+		if(animatedHeart.gameObject.activeSelf == false && animatedHeartLerpValue == 0)
+		{
+			// show animated heart
+			animatedHeart.gameObject.SetActive(true);
+		}
 	}
 
 
@@ -86,7 +100,7 @@ public class PlayerHealthUI : MonoBehaviour
 		var index = 0;
 		foreach(var h in hearts)
 		{
-			if(index <= oldHitPoints - 1)
+			if(index <= health.hitPoints - 1)
 			{
 				// show heart
 				h.SetActive(true);

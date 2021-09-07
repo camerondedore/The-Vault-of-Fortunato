@@ -48,6 +48,10 @@ public class PlayerHealth : Health
 
 	public override void Die()
 	{
+		// reset health for restarting
+		PlayerDataManager.data.hitPoints = maxHitPoints;
+		PlayerDataManager.SaveData();
+
 		blackboard.machine.SetState(blackboard.dieState);
 	}
 }
