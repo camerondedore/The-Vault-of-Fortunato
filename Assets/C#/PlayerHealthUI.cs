@@ -27,7 +27,8 @@ public class PlayerHealthUI : MonoBehaviour
 	{
 		// init animated heart
 		animatedHeartStartPosition = animatedHeart.position;
-		animatedHeartTarget = hearts[((int) health.hitPoints) - 1].GetComponent<RectTransform>();
+		var heartIndex = (int) Mathf.Clamp(( health.hitPoints) - 1, 0, health.maxHitPoints);
+		animatedHeartTarget = hearts[heartIndex].GetComponent<RectTransform>();
 
 		oldHitPoints = health.hitPoints;
 
@@ -52,7 +53,8 @@ public class PlayerHealthUI : MonoBehaviour
 
 				// reset heart animation
 				animatedHeartLerpValue = 0;
-				animatedHeartTarget = hearts[((int) health.hitPoints) - 1].GetComponent<RectTransform>();
+				var heartIndex = (int) Mathf.Clamp(( health.hitPoints) - 1, 0, health.maxHitPoints);
+				animatedHeartTarget = hearts[heartIndex].GetComponent<RectTransform>();
 			}
 			
 			oldHitPoints = health.hitPoints;

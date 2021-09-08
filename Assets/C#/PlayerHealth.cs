@@ -31,6 +31,11 @@ public class PlayerHealth : Health
 			base.dead = true;
 			Die();
 		}
+		else if(!dead)
+		{
+			// hurt
+			blackboard.machine.SetState(blackboard.hurtState);
+		}
 	}
 
 

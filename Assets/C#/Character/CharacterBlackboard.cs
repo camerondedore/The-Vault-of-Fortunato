@@ -15,6 +15,7 @@ public class CharacterBlackboard : MonoBehaviour
 		jumpStateInit,
 		jumpState,
 		slideState,
+		hurtState,
 		dieState,
 		meleeAttackSubState;
 	public Transform root;
