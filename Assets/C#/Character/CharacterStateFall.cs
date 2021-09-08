@@ -24,7 +24,7 @@ public class CharacterStateFall : CharacterState
 		// get input
 		var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
 		moveDir.y = 0;
-		moveDir.Normalize();
+		moveDir = Vector3.ClampMagnitude(moveDir, 1);
 		
 		blackboard.targetVelocity = moveDir * blackboard.speed;
 

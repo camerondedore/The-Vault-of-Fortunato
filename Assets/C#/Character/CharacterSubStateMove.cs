@@ -15,18 +15,18 @@ public class CharacterSubStateMove : CharacterState
 		// get input
 		var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
 		moveDir.y = 0;
-		moveDir.Normalize();
+		moveDir = Vector3.ClampMagnitude(moveDir, 1);
 
 		// project input on ground
 		if(blackboard.feet.isFlat)
 		{
 			// grounded
-			blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal).normalized * blackboard.speed;
+			blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeet.normal) * blackboard.speed;
 		}
 		else if(blackboard.feet.isFlatRay)
 		{
 			// ray grounded 
-			blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal).normalized * blackboard.speed;
+			blackboard.targetVelocity = Vector3.ProjectOnPlane(moveDir, blackboard.feet.checkFeetRay.normal) * blackboard.speed;
 		}
 
 		// smooth velocity to target velocity
@@ -78,7 +78,7 @@ public class CharacterSubStateMove : CharacterState
 			return blackboard.meleeAttackSubState;
 		}
 
-		if(blackboard.input.moveDirection.sqrMagnitude <= 0)
+		if(blackboard.input.moveDirection.sqrMagnitude <= 0.05f)
 		{
 			// idle
 			return blackboard.idleSubState;
