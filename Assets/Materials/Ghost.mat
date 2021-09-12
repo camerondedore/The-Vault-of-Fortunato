@@ -76,14 +76,14 @@ Material:
     - _RimDistance: 1.86
     - _RimSharpness: 0
     - _RimStrength: 4.67
-    - _Scale: 4
+    - _Scale: 6
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 3
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _turb: 8
+    - _turb: 5
     - _xScale: 0.5
     - _yScale: 1
     - _zScale: 0.5
