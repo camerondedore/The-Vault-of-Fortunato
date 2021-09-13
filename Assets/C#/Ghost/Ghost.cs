@@ -8,6 +8,8 @@ public class Ghost : MonoBehaviour
 	[SerializeField]
 	Transform target,
 		ghostMesh;
+	[SerializeField]
+	GhostAudio aud;
 	Vector3 startPosition,
 		endPosition,
 		targetPosition;
@@ -61,6 +63,7 @@ public class Ghost : MonoBehaviour
 			var health = col.transform.root.GetComponent<Health>();
 			health.Damage(1);
 			lastHitTime = Time.time;
+			aud.PlayAttack();
 		}
 	}
 }

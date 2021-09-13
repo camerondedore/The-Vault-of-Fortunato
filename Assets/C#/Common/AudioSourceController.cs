@@ -35,6 +35,21 @@ public class AudioSourceController : MonoBehaviour
 
 
 
+	public int PlayOneShotFromArray(AudioClip[] clips, int index)
+	{
+		var oldIndex = index;
+		while(oldIndex == index)
+		{
+			index = Random.Range(0, clips.Length);
+		}
+
+		var clip = clips[index];
+		source.PlayOneShot(clip);
+		return index;
+	}
+
+
+
 	public void RandomizePitch(float radius)
 	{
 		source.pitch = 1 + Random.Range(-radius, radius);

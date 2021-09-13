@@ -28,14 +28,7 @@ public class CharacterAudio : MonoBehaviour
 
 	public void Step()
 	{
-		var oldStepSoundIndex = stepSoundIndex;
-		while(stepSoundIndex == oldStepSoundIndex)
-		{
-			stepSoundIndex = Random.Range(0, stepSounds.Length);
-		}
-
-		var stepSound = stepSounds[stepSoundIndex];
-		aud.PlayOneShot(stepSound);
+		stepSoundIndex = aud.PlayOneShotFromArray(stepSounds, stepSoundIndex);
 	}
 
 
