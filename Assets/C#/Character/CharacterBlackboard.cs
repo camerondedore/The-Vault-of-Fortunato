@@ -28,6 +28,7 @@ public class CharacterBlackboard : MonoBehaviour
 	public VelocityTracker tracker;
 	public CharacterAudio charAud;
 	public Transform characterMesh;
+	public RendererFlasher characterFlasher;
 	public float speed = 6,
 		lookSpeed = 10,
 		stepHeight = 0.3f,

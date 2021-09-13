@@ -10,6 +10,8 @@ public class Ghost : MonoBehaviour
 		ghostMesh;
 	[SerializeField]
 	GhostAudio aud;
+	[SerializeField]
+	ParticleSystem attackFX;
 	Vector3 startPosition,
 		endPosition,
 		targetPosition;
@@ -64,6 +66,7 @@ public class Ghost : MonoBehaviour
 			health.Damage(1);
 			lastHitTime = Time.time;
 			aud.PlayAttack();
+			attackFX.Play();
 		}
 	}
 }

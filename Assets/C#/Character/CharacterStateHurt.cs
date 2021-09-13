@@ -23,6 +23,9 @@ public class CharacterStateHurt : CharacterState
 
 		startTime = Time.time;
 
+		// flash
+		blackboard.characterFlasher.startTime = Time.time;
+
 		// sound
 		//blackboard.charAud.PlayLand();
 	}
@@ -31,14 +34,14 @@ public class CharacterStateHurt : CharacterState
 
 	public override void EndState()
 	{
-
+		
 	}
 
 
 
 	public override State Transition()
 	{
-		if(startTime + 0.1f < Time.time)
+		if(startTime + 0.2f < Time.time)
 		{
 			// grounded
 			return blackboard.groundedSuperState;
