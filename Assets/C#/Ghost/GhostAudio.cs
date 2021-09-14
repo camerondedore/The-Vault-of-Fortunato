@@ -15,6 +15,9 @@ public class GhostAudio : MonoBehaviour
     void Start()
     {
         aud = GetComponent<AudioSourceController>();
+
+		// randomize looping sound
+		aud.source.time = Random.Range(0, aud.source.clip.length);
     }
 
     

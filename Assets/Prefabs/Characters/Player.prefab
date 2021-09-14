@@ -850,7 +850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackboard: {fileID: 0}
   jumpResponseSpeed: 8
-  jumpHeight: 2
+  jumpHeight: 1.5
 --- !u!114 &936047520851847134
 MonoBehaviour:
   m_ObjectHideFlags: 0

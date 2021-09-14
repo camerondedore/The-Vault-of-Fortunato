@@ -51,6 +51,16 @@ public class CharacterStateDie : CharacterState
 	{
 		// set look y
 		blackboard.cameraPivotController.pauseY = false;
+
+		// turn off all colliders
+		var colliders = transform.root.GetComponentsInChildren<Collider>();
+		foreach(var c in colliders)
+		{
+			if(c.GetType() != typeof(CharacterController))
+			{
+				c.enabled = false;
+			}
+		}
 	}
 
 
