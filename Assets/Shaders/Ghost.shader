@@ -17,7 +17,7 @@ Shader "Custom/Ghost"
     }
     SubShader
     {
-       	Tags { "RenderType" = "fade" "Queue" = "Transparent"}
+       	Tags { "RenderType" = "Transparent" "Queue" = "Transparent"}
 		Blend SrcAlpha One
 		BlendOp Add
 		ZWrite On

@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 936047520702148369}
+  feet: {fileID: 936047520710181734}
   stepSounds:
   - {fileID: 8300000, guid: 7771dc44e6a091448ae11dd4fe83f70d, type: 3}
   - {fileID: 8300000, guid: 2bfa6401c61ef3f4fb037ef4379a27af, type: 3}
   - {fileID: 8300000, guid: 72837a091b040434a9e3ac426592bb34, type: 3}
   - {fileID: 8300000, guid: 438fcf56738b09440a8051fb430b1b5d, type: 3}
   - {fileID: 8300000, guid: efdb719833e08054f84878131f1b417b, type: 3}
+  stepSoundsTerrain:
+  - {fileID: 8300000, guid: b3c2001ee51721544922d99bca887ef0, type: 3}
+  - {fileID: 8300000, guid: 526fb36828696da4490e6b42180330cf, type: 3}
+  - {fileID: 8300000, guid: 59734c9ea2d76e04496962023a9eb8e3, type: 3}
+  - {fileID: 8300000, guid: 858a3ca33bd2a55448a6524758e69d75, type: 3}
+  - {fileID: 8300000, guid: 6c2201f2a8da623418923f5f857c6b53, type: 3}
   slideSound: {fileID: 8300000, guid: 40df59fc7654e054eb25d3dc304ede04, type: 3}
   jumpSound: {fileID: 8300000, guid: c9725d2c8cd82fe4f91aa04fc25edebe, type: 3}
   landSound: {fileID: 8300000, guid: 95ec72178a34af844b6ea863e9227a6e, type: 3}
@@ -1763,7 +1770,7 @@ AudioSource:
   m_GameObject: {fileID: 4659791588161394067}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6739739990902849831, guid: 697ec2726a2c0bf4f938b79b4876dab7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

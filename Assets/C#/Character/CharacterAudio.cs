@@ -10,7 +10,10 @@ public class CharacterAudio : MonoBehaviour
     
 	[SerializeField]
 	AudioSourceController aud;
+	[SerializeField]
+	GroundChecker feet;
 	public AudioClip[] stepSounds;
+	public AudioClip[] stepSoundsTerrain;
 	public AudioClip slideSound,
 		jumpSound,
 		landSound,
@@ -28,7 +31,24 @@ public class CharacterAudio : MonoBehaviour
 
 	public void Step()
 	{
-		stepSoundIndex = aud.PlayOneShotFromArray(stepSounds, stepSoundIndex);
+		if(feet.checkFeet.collider == null && feet.checkFeetRay.collider == null)
+		{
+			// not on ground
+			return;
+		}
+
+		var col = feet.checkFeet.collider != null ? feet.checkFeet.collider : feet.checkFeetRay.collider;
+
+		if(col.GetComponent<Terrain>() == null)
+		{
+			// hard surface
+			stepSoundIndex = aud.PlayOneShotFromArray(stepSounds, stepSoundIndex);
+		}
+		else
+		{
+			// terrain
+			stepSoundIndex = aud.PlayOneShotFromArray(stepSoundsTerrain, stepSoundIndex);
+		}
 	}
 
 
