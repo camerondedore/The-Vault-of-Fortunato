@@ -14,17 +14,17 @@ public class PlayerBricks : MonoBehaviour
 	void Start()
 	{
 		// init from saved data
-		bricksCollected = PlayerDataManager.data.bricks;
+		bricksCollected = PlayerDataManager.data.brickIds.Count;
 	}
 
 
 
-	public void AddBrick()
+	public void AddBrick(string id)
 	{
 		bricksCollected++;
 
 		// save data
-		PlayerDataManager.data.bricks = bricksCollected;
+		PlayerDataManager.data.brickIds.Add(id);
 		PlayerDataManager.SaveData();
 	}
 }

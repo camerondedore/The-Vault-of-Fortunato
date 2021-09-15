@@ -50,6 +50,6 @@ public class PlayerDataManager : MonoBehaviour
 	public class PlayerData
 	{
 		public float hitPoints = 3;
-		public int bricks = 0;
+		public List<string> brickIds = new List<string>();
 	}
 }

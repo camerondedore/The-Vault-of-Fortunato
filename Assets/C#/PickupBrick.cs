@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [SelectionBase]
 public class PickupBrick : MonoBehaviour, IPickup
@@ -8,6 +9,21 @@ public class PickupBrick : MonoBehaviour, IPickup
     
 	[SerializeField]
 	ParticleSystem brickFX;
+	string brickId = "scene-location";
+
+
+
+	void Start()
+	{
+		// generate id using scene and position
+		brickId = $"{SceneManager.GetActiveScene().name}-{transform.position}";
+
+		// check if already collected
+		if (PlayerDataManager.data.brickIds.Contains(brickId))
+		{
+			Destroy(gameObject);
+		}
+	}
 
 
 
@@ -20,7 +36,7 @@ public class PickupBrick : MonoBehaviour, IPickup
 
 	public void Pickup(Transform player)
 	{
-		player.GetComponent<PlayerBricks>().AddBrick();
+		player.GetComponent<PlayerBricks>().AddBrick(brickId);
 		// fx
 		brickFX.transform.parent = null;
 		brickFX.Play();

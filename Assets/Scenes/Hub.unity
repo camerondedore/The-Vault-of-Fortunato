@@ -744,6 +744,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 158852224}
     m_Modifications:
+    - target: {fileID: 2751593490066005115, guid: 537ce8d0ad5fe2c448fbd50b7fe23e92, type: 3}
+      propertyPath: brickId
+      value: hub-right
+      objectReference: {fileID: 0}
     - target: {fileID: 2751593490066005116, guid: 537ce8d0ad5fe2c448fbd50b7fe23e92, type: 3}
       propertyPath: m_Name
       value: Pickup Brick (1)
@@ -3494,6 +3498,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 158852224}
     m_Modifications:
+    - target: {fileID: 2751593490066005115, guid: 537ce8d0ad5fe2c448fbd50b7fe23e92, type: 3}
+      propertyPath: brickId
+      value: hub-left
+      objectReference: {fileID: 0}
     - target: {fileID: 2751593490066005116, guid: 537ce8d0ad5fe2c448fbd50b7fe23e92, type: 3}
       propertyPath: m_Name
       value: Pickup Brick
