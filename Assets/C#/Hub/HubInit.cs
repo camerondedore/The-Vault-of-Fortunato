@@ -5,7 +5,17 @@ using UnityEngine;
 public class HubInit : MonoBehaviour
 {
     
-
+	[SerializeField]
+	Transform player,
+		mainCamera,
+		innStart,
+		cemeteryStart,
+		manorStart,
+		hedgeStart,
+		innCameraStart,
+		cemeteryCameraStart,
+		manorCameraStart,
+		hedgeCameraStart;
 
 
 
@@ -14,5 +24,36 @@ public class HubInit : MonoBehaviour
         // set player's starting inn location to the front door
 		InnDataManager.data.startAtDoor = true;
 		InnDataManager.SaveData();
+
+
+		HubDataManager.LoadData();
+		if(HubDataManager.data.startingDoor == "inn")
+		{
+			// set player's starting location to the inn
+			player.position = innStart.position;
+			// set camera's starting location to the inn
+			mainCamera.position = innCameraStart.position;
+		}
+		else if(HubDataManager.data.startingDoor == "cemetery")
+		{
+			// set player's starting location to the cemetery
+			player.position = cemeteryStart.position;
+			// set camera's starting location to the cemetery
+			mainCamera.position = cemeteryCameraStart.position;
+		}
+		else if(HubDataManager.data.startingDoor == "manor")
+		{
+			// set player's starting location to the manor
+			player.position = manorStart.position;
+			// set camera's starting location to the manor
+			mainCamera.position = manorCameraStart.position;
+		}
+		else if(HubDataManager.data.startingDoor == "hedge")
+		{
+			// set player's starting location to the hedge maze
+			player.position = hedgeStart.position;
+			// set camera's starting location to the hedge maze
+			mainCamera.position = hedgeCameraStart.position;
+		}
     }    
 }

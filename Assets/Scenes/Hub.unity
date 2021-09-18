@@ -1230,6 +1230,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7424867991184478435, guid: 65248837993e964499e64b64a8ae1223, type: 3}
   m_PrefabInstance: {fileID: 221485313}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &230926800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230926801}
+  m_Layer: 7
+  m_Name: Inn Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &230926801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230926800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.93, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 262021522}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &232337988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1385,6 +1415,8 @@ Transform:
   - {fileID: 462392782}
   - {fileID: 1686183217}
   - {fileID: 2210845497895899766}
+  - {fileID: 230926801}
+  - {fileID: 381844669}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1400,6 +1432,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ef06f2b2fb2cb45a0d79dda606edd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 936047519998342897}
+  mainCamera: {fileID: 7119645592416082765}
+  innStart: {fileID: 230926801}
+  cemeteryStart: {fileID: 0}
+  manorStart: {fileID: 0}
+  hedgeStart: {fileID: 0}
+  innCameraStart: {fileID: 381844669}
+  cemeteryCameraStart: {fileID: 0}
+  manorCameraStart: {fileID: 0}
+  hedgeCameraStart: {fileID: 0}
 --- !u!1 &277719458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,6 +2119,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2517165127982466580, guid: 7dddf44829b2730488f166779c2c670a, type: 3}
   m_PrefabInstance: {fileID: 356901577}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &381844668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381844669}
+  m_Layer: 7
+  m_Name: Inn Camera Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &381844669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381844668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.4655237, y: 3.7621028, z: 5.318493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 262021522}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &383079340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9094,7 +9166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6757663414221891164, guid: 4ce1ffb0ec8119d469c9c16d83703333, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6757663414221891164, guid: 4ce1ffb0ec8119d469c9c16d83703333, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10011,6 +10083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+--- !u!4 &936047519998342897 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 936047521086970916, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+  m_PrefabInstance: {fileID: 936047519998342896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1312315686788040176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10993,6 +11070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35779230c490ee34e8ca5ee185d54fbf, type: 3}
+--- !u!4 &7119645592416082765 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7119645592611282996, guid: 35779230c490ee34e8ca5ee185d54fbf, type: 3}
+  m_PrefabInstance: {fileID: 7119645592416082764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7431189543783473157
 PrefabInstance:
   m_ObjectHideFlags: 0
