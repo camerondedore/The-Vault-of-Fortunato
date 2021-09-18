@@ -9849,6 +9849,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 936047520796604253, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+      propertyPath: meleeSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 936047520796604253, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+      propertyPath: meleeSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b32101bcd84145e45821eee0fa345804, type: 3}
+    - target: {fileID: 936047520796604253, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+      propertyPath: meleeSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec98f428f804a674e8055cbb5342e5e3, type: 3}
+    - target: {fileID: 936047520796604253, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+      propertyPath: meleeSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc371fbd999d72d4f8b286a0087d22e8, type: 3}
+    - target: {fileID: 936047520796604253, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+      propertyPath: meleeSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: c93b9796faef5ec4198e49466cfa78b0, type: 3}
+    - target: {fileID: 936047520796604253, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
+      propertyPath: meleeSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 206c5e699f7ef6d4786f1607ed5e4fe7, type: 3}
     - target: {fileID: 936047521086970913, guid: 8c3c83e9d102e7941b2f1b66fa1316a7, type: 3}
       propertyPath: m_Name
       value: Player

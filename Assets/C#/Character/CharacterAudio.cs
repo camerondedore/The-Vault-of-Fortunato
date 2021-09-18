@@ -18,7 +18,9 @@ public class CharacterAudio : MonoBehaviour
 		jumpSound,
 		landSound,
 		dieSound;
-	int stepSoundIndex = 0;
+	public AudioClip[] meleeSounds;
+	int stepSoundIndex = 0,
+		meleeSoundIndex = 0;
 
 
 
@@ -49,6 +51,13 @@ public class CharacterAudio : MonoBehaviour
 			// terrain
 			stepSoundIndex = aud.PlayOneShotFromArray(stepSoundsTerrain, stepSoundIndex);
 		}
+	}
+
+
+
+	public void Melee()
+	{
+		meleeSoundIndex = aud.PlayOneShotFromArray(meleeSounds, meleeSoundIndex);
 	}
 
 
