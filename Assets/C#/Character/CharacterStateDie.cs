@@ -61,6 +61,9 @@ public class CharacterStateDie : CharacterState
 				c.enabled = false;
 			}
 		}
+
+		// anim
+		blackboard.anim.SetTrigger("Die");
 	}
 
 
