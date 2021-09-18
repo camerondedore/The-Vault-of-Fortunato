@@ -11,7 +11,8 @@ public class CharacterStateHurt : CharacterState
 
 	public override void RunState()
 	{
-		
+		// move
+		blackboard.agent.Move((-blackboard.lookDirection.normalized) * Time.deltaTime);
 	}
 
 
@@ -41,7 +42,7 @@ public class CharacterStateHurt : CharacterState
 
 	public override State Transition()
 	{
-		if(startTime + 0.2f < Time.time)
+		if(startTime + 0.3f < Time.time)
 		{
 			// grounded
 			return blackboard.groundedSuperState;
