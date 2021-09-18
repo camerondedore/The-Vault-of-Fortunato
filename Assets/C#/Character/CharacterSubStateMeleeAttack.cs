@@ -71,6 +71,9 @@ public class CharacterSubStateMeleeAttack : CharacterState
 
 		// set target velocity
 		blackboard.targetVelocity = Vector3.zero;
+
+		// start trail
+		blackboard.meleeTrail.emitting = true;
 	}
 
 
@@ -88,6 +91,10 @@ public class CharacterSubStateMeleeAttack : CharacterState
 
 		// reset chain
 		chainAttack = false;
+
+		// stop trail
+		blackboard.meleeTrail.emitting = false;
+		blackboard.meleeTrail.Clear();
 	}
 
 

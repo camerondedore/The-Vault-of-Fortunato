@@ -29,6 +29,7 @@ public class CharacterBlackboard : MonoBehaviour
 	public CharacterAudio charAud;
 	public Transform characterMesh;
 	public RendererFlasher characterFlasher;
+	public TrailRenderer meleeTrail;
 	public float speed = 6,
 		lookSpeed = 10,
 		stepHeight = 0.3f,
