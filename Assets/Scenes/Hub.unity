@@ -1412,11 +1412,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 462392782}
   - {fileID: 1686183217}
   - {fileID: 2210845497895899766}
+  - {fileID: 462392782}
   - {fileID: 230926801}
   - {fileID: 381844669}
+  - {fileID: 1778731952}
+  - {fileID: 950910351}
+  - {fileID: 1093350070}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1435,11 +1438,11 @@ MonoBehaviour:
   player: {fileID: 936047519998342897}
   mainCamera: {fileID: 7119645592416082765}
   innStart: {fileID: 230926801}
-  cemeteryStart: {fileID: 0}
+  cemeteryStart: {fileID: 950910351}
   manorStart: {fileID: 0}
   hedgeStart: {fileID: 0}
   innCameraStart: {fileID: 381844669}
-  cemeteryCameraStart: {fileID: 0}
+  cemeteryCameraStart: {fileID: 1093350070}
   manorCameraStart: {fileID: 0}
   hedgeCameraStart: {fileID: 0}
 --- !u!1 &277719458
@@ -2711,7 +2714,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 262021522}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &462392783
 MonoBehaviour:
@@ -4664,6 +4667,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2517165127982466580, guid: 7dddf44829b2730488f166779c2c670a, type: 3}
   m_PrefabInstance: {fileID: 943798878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &950910350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950910351}
+  m_Layer: 7
+  m_Name: Cemetery Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950910351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950910350}
+  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: -14.250001, y: 0.93, z: 8.250001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 262021522}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &954670075
 GameObject:
   m_ObjectHideFlags: 0
@@ -5329,6 +5362,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3705755462064345819, guid: 2f7f6541c37e52f4d89228918b21e747, type: 3}
   m_PrefabInstance: {fileID: 1084147131}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1093350069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1093350070}
+  m_Layer: 7
+  m_Name: Cemetery Camera Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1093350070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093350069}
+  m_LocalRotation: {x: -0.088389665, y: 0.9074082, z: -0.24336033, w: -0.33101887}
+  m_LocalPosition: {x: -9.927834, y: 4.2740483, z: 10.953001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 262021522}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1154142471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7558,7 +7621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 262021522}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &1686183218
 TerrainCollider:
@@ -8112,6 +8175,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7424867991184478435, guid: 65248837993e964499e64b64a8ae1223, type: 3}
   m_PrefabInstance: {fileID: 1778385535}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1778731951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1778731952}
+  - component: {fileID: 1778731954}
+  - component: {fileID: 1778731953}
+  m_Layer: 11
+  m_Name: Scene Trigger Cemetery
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1778731952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778731951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.671, y: 1, z: 8.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 262021522}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1778731953
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778731951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1778731954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778731951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de479fe46204e964d89c174017aa7141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelName: Cemetery
 --- !u!1001 &1790209768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10705,7 +10826,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2524402943316310234, guid: 878ca55a9a65b554385fd27179bec16b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2524402943316310234, guid: 878ca55a9a65b554385fd27179bec16b, type: 3}
       propertyPath: m_LocalPosition.x

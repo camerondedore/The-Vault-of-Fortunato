@@ -24,6 +24,7 @@ public class InnInit : MonoBehaviour
 		{
 			// set player's starting location to the front door
 			player.position = frontDoorStart.position;
+			player.forward = frontDoorStart.forward;
 			// set camera's starting location to the front door
 			mainCamera.position = frontDoorCameraStart.position;
 		}

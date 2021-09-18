@@ -31,6 +31,7 @@ public class HubInit : MonoBehaviour
 		{
 			// set player's starting location to the inn
 			player.position = innStart.position;
+			player.forward = innStart.forward;
 			// set camera's starting location to the inn
 			mainCamera.position = innCameraStart.position;
 		}
@@ -38,6 +39,7 @@ public class HubInit : MonoBehaviour
 		{
 			// set player's starting location to the cemetery
 			player.position = cemeteryStart.position;
+			player.forward = cemeteryStart.forward;
 			// set camera's starting location to the cemetery
 			mainCamera.position = cemeteryCameraStart.position;
 		}
@@ -45,6 +47,7 @@ public class HubInit : MonoBehaviour
 		{
 			// set player's starting location to the manor
 			player.position = manorStart.position;
+			player.forward = manorStart.forward;
 			// set camera's starting location to the manor
 			mainCamera.position = manorCameraStart.position;
 		}
@@ -52,6 +55,7 @@ public class HubInit : MonoBehaviour
 		{
 			// set player's starting location to the hedge maze
 			player.position = hedgeStart.position;
+			player.forward = hedgeStart.forward;
 			// set camera's starting location to the hedge maze
 			mainCamera.position = hedgeCameraStart.position;
 		}
