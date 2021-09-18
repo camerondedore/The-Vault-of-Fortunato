@@ -19,6 +19,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		root;
 	RaycastHit cameraHit;
 	Vector3 followPosition;
+	Vector2 lookRawChange;
 	float range,
 		rangeFlat;
 
@@ -48,6 +49,9 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		{
 			return;
 		}
+
+		// apply look from input
+		followPosition += mainCamera.right * -PlayerInput.look.x * 0.5f * Time.deltaTime;
 
 		// tether camera, set horizontal position, then vertical
         var newDirection = followPosition - transform.position;
@@ -80,7 +84,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 
 		// apply look
 		//mainCamera.LookAt(cameraY);
-		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.deltaTime * 3);
+		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.deltaTime * 5);
     }
 
 

@@ -45,5 +45,6 @@ public class CharacterBlackboard : MonoBehaviour
 	[HideInInspector]
 	public Disconnector jumpDisconnector = new Disconnector(),
 		fire1Disconnector = new Disconnector(),
-		fire2Disconnector = new Disconnector();
+		fire2Disconnector = new Disconnector(),
+		centerCameraDisconnector = new Disconnector();
 }

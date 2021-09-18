@@ -18,7 +18,7 @@ public class CharacterSuperStateRidePlatform : CharacterSuperState
 		}
 
 		// center camera
-		if(blackboard.input.centerCamera > 0)
+		if(blackboard.centerCameraDisconnector.Trip(blackboard.input.centerCamera))
 		{
 			blackboard.cameraController.CenterCamera();
 		}

@@ -12,7 +12,7 @@ public class CharacterSuperStateGrounded : CharacterSuperState
 	public override void RunState()
 	{
 		// center camera
-		if(blackboard.input.centerCamera > 0)
+		if(blackboard.centerCameraDisconnector.Trip(blackboard.input.centerCamera))
 		{
 			blackboard.cameraController.CenterCamera();
 		}

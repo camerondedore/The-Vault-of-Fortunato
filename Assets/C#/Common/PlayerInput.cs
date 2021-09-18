@@ -42,7 +42,7 @@ public class PlayerInput : MonoBehaviour
 	public void OnLook(InputValue value)
 	{
 		var input = value.Get<Vector2>();
-		look = new Vector2(input.y, input.x);
+		look = new Vector2(input.x, input.y);
 	}
 
 

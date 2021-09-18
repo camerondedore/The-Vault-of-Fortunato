@@ -185,6 +185,61 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "Right Stick",
+                    "id": "da1593fb-6429-4fe1-8b21-62bf915f21bb",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=20,y=20)",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "f0e57192-3958-4fd1-9c40-7db571f10ae6",
+                    "path": "<Gamepad>/rightStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "dc96ceaf-5b06-42b5-8dd9-c69f374f5c1a",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "869a64da-b2c6-4c09-a69d-9881db326127",
+                    "path": "<Gamepad>/rightStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "46c4e807-b685-42ba-ace3-fc9d198962ad",
+                    "path": "<Gamepad>/rightStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "Space",
                     "id": "081651f1-d6d5-482b-91e6-951eaa7e164c",
                     "path": "1DAxis",
@@ -319,7 +374,7 @@
                 {
                     "name": "",
                     "id": "8193bc2d-1aa0-42ef-8713-c24f9259cb2d",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -343,6 +398,11 @@
                 {
                     "devicePath": "<Keyboard>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
