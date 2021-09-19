@@ -8,9 +8,8 @@ public class Melee : MonoBehaviour
 	[SerializeField]
 	LayerMask mask;
 	[SerializeField]
-	Vector3 boxHalves;
-	[SerializeField]
-	float damage = 1;
+	float radius = 0.75f,
+		damage = 1;
 
 
 
@@ -24,17 +23,17 @@ public class Melee : MonoBehaviour
 	public void Attack()
 	{
 		// get colliders
-		var hitColliders = Physics.OverlapBox(transform.position, boxHalves, transform.rotation, mask, QueryTriggerInteraction.Ignore);
+		var hitColliders = Physics.OverlapSphere(transform.position, radius, mask, QueryTriggerInteraction.Ignore);
+		//Debug.DrawRay(transform.position, transform.forward * radius);
 
 		foreach(var c in hitColliders)
 		{
-			//Debug.Log(c.name);
-			//Debug.DrawRay(transform.position, transform.forward);
+			//Debug.Log(c.transform.root.name);
 			
 			if(c.transform.root == transform.root)
 			{
 				// don't hit self
-				return;
+				continue;
 			}
 			
 			// damage
