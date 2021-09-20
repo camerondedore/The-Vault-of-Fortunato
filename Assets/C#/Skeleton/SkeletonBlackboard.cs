@@ -10,9 +10,10 @@ public class SkeletonBlackboard : MonoBehaviour
 	public NavMeshAgent agent;
 	public VelocityTracker tracker;
 	public State idleState,
-		patrolState,
+	//	patrolState,
 		seekState,
 		attackState,
 		hurtState,
 		dieState;
+	public Transform player;
 }

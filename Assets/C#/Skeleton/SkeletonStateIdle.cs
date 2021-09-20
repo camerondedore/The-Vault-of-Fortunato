@@ -5,10 +5,12 @@ using UnityEngine;
 public class SkeletonStateIdle : SkeletonState
 {
 
+	// [SerializeField]
+	// Vector2 idleTimeRange;
+	// float startTime,
+	// 	idleTime;
 	[SerializeField]
-	Vector2 idleTimeRange;
-	float startTime,
-		idleTime;
+	float aggroRange = 4;
 
 
 
@@ -21,12 +23,12 @@ public class SkeletonStateIdle : SkeletonState
 
 	public override void StartState()
 	{
-		// stop
+		// // stop
 		blackboard.agent.isStopped = true;
 
-		// time
-		startTime = Time.time;
-		idleTime = Random.Range(idleTimeRange.x, idleTimeRange.y);
+		// // time
+		// startTime = Time.time;
+		// idleTime = Random.Range(idleTimeRange.x, idleTimeRange.y);
 	}
 
 
@@ -40,10 +42,16 @@ public class SkeletonStateIdle : SkeletonState
 
 	public override State Transition()
 	{	
-		if(startTime + idleTime < Time.time)
+		// if(startTime + idleTime < Time.time)
+		// {
+		// 	// patrol
+		// 	return blackboard.patrolState;
+		// }
+
+		if(Vector3.Distance(transform.root.position, blackboard.player.position) < aggroRange)
 		{
-			// patrol
-			return blackboard.patrolState;
+			// seek
+			return blackboard.seekState;
 		}
 
 		return this;
