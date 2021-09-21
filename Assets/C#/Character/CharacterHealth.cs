@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : Health
+public class CharacterHealth : Health
 {
     
 	[SerializeField]
@@ -22,10 +22,6 @@ public class PlayerHealth : Health
 	{
 		hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
 
-		// save data
-		PlayerDataManager.data.hitPoints = hitPoints;
-		PlayerDataManager.SaveData();
-
 		if(hitPoints == 0 && !base.dead)
 		{
 			base.dead = true;
@@ -35,6 +31,10 @@ public class PlayerHealth : Health
 		{
 			// hurt
 			blackboard.machine.SetState(blackboard.hurtState);
+
+			// save data
+			PlayerDataManager.data.hitPoints = hitPoints;
+			PlayerDataManager.SaveData();
 		}
 	}
 

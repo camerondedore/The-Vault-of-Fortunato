@@ -5,7 +5,10 @@ using UnityEngine;
 public class SkeletonStateSeek : SkeletonState
 {
 
-
+	[SerializeField]
+	float attackRange = 1.5f,
+		attackDelay = 1;
+	float startTime;
 
 
 
@@ -18,6 +21,9 @@ public class SkeletonStateSeek : SkeletonState
 
 		// set destination
 		blackboard.agent.destination = blackboard.player.position;
+
+		// look
+		transform.root.forward = Vector3.Lerp(transform.root.forward, blackboard.tracker.velocity, Time.deltaTime * 10);
 	}
 
 
@@ -26,6 +32,8 @@ public class SkeletonStateSeek : SkeletonState
 	{
 		// start
 		blackboard.agent.isStopped = false;
+
+		startTime = Time.time;
 	}
 
 
@@ -39,6 +47,15 @@ public class SkeletonStateSeek : SkeletonState
 
 	public override State Transition()
 	{	
+		// check distance
+		var close = Vector3.Distance(blackboard.player.position, transform.root.position) < attackRange;
+
+		if(close && Time.time > startTime + attackDelay)
+		{
+			// idle
+			return blackboard.attackState;
+		}
+
 		return this;
 	}
 }

@@ -16,4 +16,5 @@ public class SkeletonBlackboard : MonoBehaviour
 		hurtState,
 		dieState;
 	public Transform player;
+	public Animator anim;
 }

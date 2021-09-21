@@ -59,7 +59,7 @@ public class CharacterSubStateMeleeAttack : CharacterState
 			attackNumber = 1;
 		}
 		
-		// idle
+		// anim
 		blackboard.anim.SetTrigger("Attack");
 		blackboard.anim.SetInteger("Attack Number", attackNumber);
 

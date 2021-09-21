@@ -37,7 +37,7 @@ public class VelocityTracker : MonoBehaviour, IInitializeIntoBlackboard
 		}
 
 		fixedDeltaTimeVelocity = transform.position - oldPosition;
-		velocity = fixedDeltaTimeVelocity / Time.fixedDeltaTime;
+		velocity = fixedDeltaTimeVelocity / Time.deltaTime;
 		localVelocity = transform.InverseTransformDirection(velocity);
 		speed = velocity.magnitude;
 		oldPosition = transform.position;
