@@ -57,14 +57,13 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event Step has a time (0.995911) outside the clip's
-      valid range (0.000000..0.800000). It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -79,7 +78,7 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Char Inn Keeper Idle
-      takeName: char-plague-doctor-armature|Char Inn Keeper Idle
+      takeName: char-inn-keeper-armature|Char Inn Keeper Idle
       internalID: 0
       firstFrame: 0
       lastFrame: 60
@@ -108,7 +107,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Jump Init
-      takeName: char-plague-doctor-armature|Char Inn Keeper Jump Init
+      takeName: char-inn-keeper-armature|Char Inn Keeper Jump Init
       internalID: 0
       firstFrame: 0
       lastFrame: 10
@@ -137,7 +136,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Jump
-      takeName: char-plague-doctor-armature|Char Inn Keeper Jump
+      takeName: char-inn-keeper-armature|Char Inn Keeper Jump
       internalID: 0
       firstFrame: 0
       lastFrame: 40
@@ -166,7 +165,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Fall
-      takeName: char-plague-doctor-armature|Char Inn Keeper Fall
+      takeName: char-inn-keeper-armature|Char Inn Keeper Fall
       internalID: 0
       firstFrame: 0
       lastFrame: 60
@@ -195,7 +194,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Slide
-      takeName: char-plague-doctor-armature|Char Inn Keeper Slide
+      takeName: char-inn-keeper-armature|Char Inn Keeper Slide
       internalID: 0
       firstFrame: 0
       lastFrame: 10
@@ -224,7 +223,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Attack 1
-      takeName: char-plague-doctor-armature|Char Inn Keeper Attack 1
+      takeName: char-inn-keeper-armature|Char Inn Keeper Attack 1
       internalID: 0
       firstFrame: 0
       lastFrame: 8
@@ -260,7 +259,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Attack 2
-      takeName: char-plague-doctor-armature|Char Inn Keeper Attack 2
+      takeName: char-inn-keeper-armature|Char Inn Keeper Attack 2
       internalID: 0
       firstFrame: 0
       lastFrame: 8
@@ -295,123 +294,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Char Inn Keeper Attack 3
-      takeName: char-plague-doctor-armature|Char Inn Keeper Attack 3
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 7
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Char Inn Keeper Walk
-      takeName: char-plague-doctor-armature|Char Inn Keeper Walk
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 24
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0.13269418
-        functionName: Step
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.634054
-        functionName: Step
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Char Inn Keeper Walk 1
-      takeName: char-plague-doctor-armature|Char Inn Keeper Walk 1
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 47
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0.15241636
-        functionName: Step
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.6356877
-        functionName: Step
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
       name: Char Inn Keeper Walk 2
-      takeName: char-plague-doctor-armature|Char Inn Keeper Walk 2
+      takeName: char-inn-keeper-armature|Char Inn Keeper Walk 2
       internalID: 0
       firstFrame: 0
       lastFrame: 24
@@ -454,7 +338,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Hurt
-      takeName: char-plague-doctor-armature|Char Inn Keeper Hurt
+      takeName: char-inn-keeper-armature|Char Inn Keeper Hurt
       internalID: 0
       firstFrame: 0
       lastFrame: 9
@@ -483,7 +367,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Char Inn Keeper Die
-      takeName: char-plague-doctor-armature|Char Inn Keeper Die
+      takeName: char-inn-keeper-armature|Char Inn Keeper Die
       internalID: 0
       firstFrame: 0
       lastFrame: 33
