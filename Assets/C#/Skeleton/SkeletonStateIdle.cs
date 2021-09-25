@@ -29,6 +29,9 @@ public class SkeletonStateIdle : SkeletonState
 		// // time
 		// startTime = Time.time;
 		// idleTime = Random.Range(idleTimeRange.x, idleTimeRange.y);
+
+		// idle
+		blackboard.anim.SetTrigger("Idle");
 	}
 
 

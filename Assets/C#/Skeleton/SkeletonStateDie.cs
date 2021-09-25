@@ -40,7 +40,7 @@ public class SkeletonStateDie : SkeletonState
 		}
 
 		// anim
-		//blackboard.anim.SetTrigger("Die");
+		blackboard.anim.SetTrigger("Die");
 
 		// die audio
 		//blackboard.charAud.PlayDie();

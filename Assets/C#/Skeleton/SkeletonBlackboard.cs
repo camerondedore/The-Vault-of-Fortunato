@@ -17,4 +17,5 @@ public class SkeletonBlackboard : MonoBehaviour
 		dieState;
 	public Transform player;
 	public Animator anim;
+	public TrailRenderer meleeTrail;
 }

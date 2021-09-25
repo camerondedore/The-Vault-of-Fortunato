@@ -23,7 +23,15 @@ public class SkeletonStateSeek : SkeletonState
 		blackboard.agent.destination = blackboard.player.position;
 
 		// look
-		transform.root.forward = Vector3.Lerp(transform.root.forward, blackboard.tracker.velocity, Time.deltaTime * 10);
+		var lookDirection = blackboard.tracker.velocity;
+		lookDirection.y = 0;
+		transform.root.forward = Vector3.Lerp(transform.root.forward, lookDirection, Time.deltaTime * 10);
+
+		// get real speed
+		var realSpeed = blackboard.tracker.velocity.magnitude;
+
+		// animate
+		blackboard.anim.SetFloat("Time Scale", realSpeed / blackboard.agent.speed);
 	}
 
 
@@ -34,6 +42,9 @@ public class SkeletonStateSeek : SkeletonState
 		blackboard.agent.isStopped = false;
 
 		startTime = Time.time;
+
+		// animate
+		blackboard.anim.SetTrigger("Walk");
 	}
 
 

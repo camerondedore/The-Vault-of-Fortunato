@@ -11,6 +11,7 @@ public class SkeletonStateAttack : SkeletonState
 		damageRange = 1,
 		damageAngle = 90;
 	float startTime;
+	int attackNumber = 1;
 	bool meleeDamage = false;
 
 
@@ -37,9 +38,10 @@ public class SkeletonStateAttack : SkeletonState
 
 
 	public override void StartState()
-	{
+	{	
 		// anim
-		//blackboard.anim.SetTrigger("Attack");
+		blackboard.anim.SetTrigger("Attack");
+		blackboard.anim.SetInteger("Attack Number", attackNumber);
 
 		// get start time
 		startTime = Time.time;
@@ -48,7 +50,7 @@ public class SkeletonStateAttack : SkeletonState
 		meleeDamage = false;
 
 		// start trail
-		//blackboard.meleeTrail.emitting = true;
+		blackboard.meleeTrail.emitting = true;
 
 		// aim
 		var lookDirection = blackboard.player.position - transform.root.position;
@@ -60,9 +62,17 @@ public class SkeletonStateAttack : SkeletonState
 
 	public override void EndState()
 	{
+		attackNumber++;
+
+		if(attackNumber > 2)
+		{
+			attackNumber = 1;
+		}
+
+
 		// stop trail
-		//blackboard.meleeTrail.emitting = false;
-		//blackboard.meleeTrail.Clear();
+		blackboard.meleeTrail.emitting = false;
+		blackboard.meleeTrail.Clear();
 	}
 
 

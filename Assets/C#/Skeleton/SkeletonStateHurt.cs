@@ -22,7 +22,7 @@ public class SkeletonStateHurt : SkeletonState
 	public override void StartState()
 	{
 		// animate
-		//blackboard.anim.SetTrigger("Hurt");
+		blackboard.anim.SetTrigger("Hurt");
 
 		startTime = Time.time;
 
