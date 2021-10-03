@@ -39,11 +39,13 @@ public class SkeletonStateDie : SkeletonState
 			}
 		}
 
-		// anim
-		blackboard.anim.SetTrigger("Die");
-
 		// die audio
-		//blackboard.charAud.PlayDie();
+		blackboard.aud.PlayDie();
+
+		blackboard.mesh.SetActive(false);
+
+		// gib
+		blackboard.gibber.InitiateGibs();
 	}
 
 

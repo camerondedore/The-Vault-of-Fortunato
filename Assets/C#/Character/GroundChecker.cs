@@ -63,6 +63,11 @@ public class GroundChecker : MonoBehaviour
 
 	public GameObject GetGround()
 	{
+		if(checkFeet.collider == null)
+		{
+			return null;
+		}
+
 		if(isGrounded)
 		{
 			return checkFeet.collider.gameObject;

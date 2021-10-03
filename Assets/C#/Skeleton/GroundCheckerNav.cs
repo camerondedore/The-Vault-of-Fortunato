@@ -29,7 +29,7 @@ public class GroundCheckerNav : MonoBehaviour
 		// get distance for sphere cast
 		distance = controller.height - controller.baseOffset;
 		// get distance for ray cast
-		rayDistance = controller.height * 0.5f + 0.02f - controller.baseOffset;
+		rayDistance = controller.height * 0.5f + 0.02f;
 	}
 
 

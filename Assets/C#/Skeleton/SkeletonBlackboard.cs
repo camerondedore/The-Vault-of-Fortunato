@@ -18,4 +18,7 @@ public class SkeletonBlackboard : MonoBehaviour
 	public Transform player;
 	public Animator anim;
 	public TrailRenderer meleeTrail;
+	public SkeletonGibs gibber;
+	public GameObject mesh;
+	public SkeletonAudio aud;
 }

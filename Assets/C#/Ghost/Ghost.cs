@@ -16,7 +16,7 @@ public class Ghost : MonoBehaviour
 		endPosition,
 		targetPosition;
 	Quaternion targetRotation;
-	float lastHitTime;
+	float lastHitTime = 0;
 
 
 
@@ -60,6 +60,7 @@ public class Ghost : MonoBehaviour
 
 	void OnTriggerEnter(Collider col)
 	{
+		//Debug.Log(col.name);
 		if(lastHitTime + 1 < Time.time)
 		{
 			var health = col.transform.root.GetComponent<Health>();
