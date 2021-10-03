@@ -469,6 +469,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 858a3ca33bd2a55448a6524758e69d75, type: 3}
   - {fileID: 8300000, guid: 6c2201f2a8da623418923f5f857c6b53, type: 3}
   dieSound: {fileID: 8300000, guid: da87e7e57b02e334aa84a86859b48ccb, type: 3}
+  meleeHitSound: {fileID: 8300000, guid: 5ff726cc610b4574ca5d982e563237ad, type: 3}
   meleeSounds:
   - {fileID: 8300000, guid: b32101bcd84145e45821eee0fa345804, type: 3}
   - {fileID: 8300000, guid: ec98f428f804a674e8055cbb5342e5e3, type: 3}

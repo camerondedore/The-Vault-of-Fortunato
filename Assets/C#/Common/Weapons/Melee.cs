@@ -10,6 +10,10 @@ public class Melee : MonoBehaviour
 	[SerializeField]
 	float radius = 0.75f,
 		damage = 1;
+	[SerializeField]
+	AudioSourceController aud;
+	[SerializeField]
+	AudioClip hitSound;
 
 
 
@@ -26,6 +30,7 @@ public class Melee : MonoBehaviour
 		var hitColliders = Physics.OverlapSphere(transform.position, radius, mask, QueryTriggerInteraction.Ignore);
 		//Debug.DrawRay(transform.position, transform.forward * radius);
 
+		var hitReal = false;
 		foreach(var c in hitColliders)
 		{
 			//Debug.Log(c.transform.root.name);
@@ -42,6 +47,15 @@ public class Melee : MonoBehaviour
 			{
 				hitbox.Hit(damage);
 			}
+
+			// queue audio
+			hitReal = true;
+		}
+
+		// audio
+		if(hitReal)
+		{
+			aud.PlayOneShot(hitSound);
 		}
 	}
 }

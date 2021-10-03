@@ -14,7 +14,8 @@ public class SkeletonAudio : MonoBehaviour
 	GroundCheckerNav feet;
 	public AudioClip[] stepSounds;
 	public AudioClip[] stepSoundsTerrain;
-	public AudioClip dieSound;
+	public AudioClip dieSound,
+		meleeHitSound;
 	public AudioClip[] meleeSounds;
 	int stepSoundIndex = 0,
 		meleeSoundIndex = 0;
@@ -55,6 +56,13 @@ public class SkeletonAudio : MonoBehaviour
 	public void Melee()
 	{
 		meleeSoundIndex = aud.PlayOneShotFromArray(meleeSounds, meleeSoundIndex);
+	}
+
+
+
+	public void MeleeHit()
+	{
+		aud.PlayOneShot(meleeHitSound);
 	}
 
 

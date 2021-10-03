@@ -31,6 +31,8 @@ public class SkeletonStateAttack : SkeletonState
 			{
 				// damage
 				blackboard.player.GetComponent<Health>().Damage(1);
+				// audio
+				blackboard.aud.MeleeHit();
 			}
 		}
 	}
