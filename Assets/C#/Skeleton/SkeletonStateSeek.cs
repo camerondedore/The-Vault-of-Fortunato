@@ -58,6 +58,12 @@ public class SkeletonStateSeek : SkeletonState
 
 	public override State Transition()
 	{	
+		// player dead
+		if(blackboard.player.GetComponent<Health>().hitPoints <= 0)
+		{
+			return blackboard.idleState;
+		}
+
 		// check distance
 		var close = Vector3.Distance(blackboard.player.position, transform.root.position) < attackRange;
 

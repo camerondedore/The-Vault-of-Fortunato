@@ -51,7 +51,7 @@ public class SkeletonStateIdle : SkeletonState
 		// 	return blackboard.patrolState;
 		// }
 
-		if(Vector3.Distance(transform.root.position, blackboard.player.position) < aggroRange)
+		if(blackboard.player.GetComponent<Health>().hitPoints > 0 && Vector3.Distance(transform.root.position, blackboard.player.position) < aggroRange)
 		{
 			// seek
 			return blackboard.seekState;
