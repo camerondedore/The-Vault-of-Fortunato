@@ -16,7 +16,7 @@ public class PickupBrick : MonoBehaviour, IPickup
 	void Start()
 	{
 		// generate id using scene and position
-		brickId = $"{SceneManager.GetActiveScene().name}-{transform.position}";
+		brickId = $"{SceneManager.GetActiveScene().name.ToLower()}-{transform.position}";
 
 		// check if already collected
 		if (PlayerDataManager.data.brickIds.Contains(brickId))

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class HubInit : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class HubInit : MonoBehaviour
 		cemeteryCameraStart,
 		manorCameraStart,
 		hedgeCameraStart;
+	[SerializeField]
+	GameObject cemeterySkeleton,
+		manorSkeleton,
+		hedgeSkeleton;
 
 
 
@@ -58,6 +63,27 @@ public class HubInit : MonoBehaviour
 			player.forward = hedgeStart.forward;
 			// set camera's starting location to the hedge maze
 			mainCamera.position = hedgeCameraStart.position;
+		}
+
+		// spawn skeleton at cemetery if enough bricks are collected
+		if(PlayerDataManager.data.brickIds.Where(id => id.Contains("cemetery")).Count() == 5 &&
+			HubDataManager.data.startingDoor != "cemetery")
+		{
+			cemeterySkeleton.SetActive(true);
+		}
+
+		// spawn skeleton at manor if enough bricks are collected
+		if(PlayerDataManager.data.brickIds.Where(id => id.Contains("manor")).Count() == 5 &&
+			HubDataManager.data.startingDoor != "manor")
+		{
+			manorSkeleton.SetActive(true);
+		}
+
+		// spawn skeleton at hedge if enough bricks are collected
+		if(PlayerDataManager.data.brickIds.Where(id => id.Contains("hedge")).Count() == 5 &&
+			HubDataManager.data.startingDoor != "hedge")
+		{
+			hedgeSkeleton.SetActive(true);
 		}
     }    
 }
