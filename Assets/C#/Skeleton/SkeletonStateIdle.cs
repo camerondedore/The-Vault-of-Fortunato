@@ -23,12 +23,12 @@ public class SkeletonStateIdle : SkeletonState
 
 	public override void StartState()
 	{
-		// // stop
+		// stop
 		blackboard.agent.isStopped = true;
 
-		// // time
-		// startTime = Time.time;
-		// idleTime = Random.Range(idleTimeRange.x, idleTimeRange.y);
+		// time
+		//startTime = Time.time;
+		//idleTime = Random.Range(idleTimeRange.x, idleTimeRange.y);
 
 		// idle
 		blackboard.anim.SetTrigger("Idle");
