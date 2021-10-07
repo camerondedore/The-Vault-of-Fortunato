@@ -37,7 +37,7 @@ public class PlayerHealthUI : MonoBehaviour
 	
 
 
-	public void Update()
+	public void LateUpdate()
 	{
 		if(oldHitPoints != health.hitPoints)
 		{

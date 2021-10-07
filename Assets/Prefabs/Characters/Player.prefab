@@ -814,7 +814,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
-  radius: 0.75
+  radius: 0.8
   damage: 1
   aud: {fileID: 936047520702148369}
   hitSound: {fileID: 8300000, guid: 10ff3d550aac7e44e8cb481e8c686a2a, type: 3}

@@ -34,7 +34,7 @@ public class PlayerBricksUI : MonoBehaviour
 
 
 
-	void FixedUpdate()
+	void LateUpdate()
 	{
 		// update UI
 		if(oldBrickCount != bricks.bricksCollected)

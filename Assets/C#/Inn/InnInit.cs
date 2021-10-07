@@ -15,7 +15,7 @@ public class InnInit : MonoBehaviour
 
     void Awake()
     {
-		// set player's starting hub location to the inn
+		// set player's starting hub location to the inn exit
 		HubDataManager.data.startingDoor = "inn";
 		HubDataManager.SaveData();
 
