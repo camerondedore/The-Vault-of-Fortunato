@@ -71,4 +71,24 @@ public class SkeletonAudio : MonoBehaviour
 	{
 		aud.PlayOneShot(dieSound);
 	}
+
+
+
+	public void StartRattle()
+	{
+		// random cursor audio
+		if(aud.source.clip != null)
+		{
+			aud.source.time = Random.Range(0, aud.source.clip.length);
+    	}
+
+		aud.source.Play();
+	}
+
+
+
+	public void StopRattle()
+	{
+		aud.source.Stop();
+	}
 }

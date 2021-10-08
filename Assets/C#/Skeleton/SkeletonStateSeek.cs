@@ -45,13 +45,17 @@ public class SkeletonStateSeek : SkeletonState
 
 		// animate
 		blackboard.anim.SetTrigger("Walk");
+
+		// audio
+		blackboard.aud.StartRattle();
 	}
 
 
 
 	public override void EndState()
 	{
-		
+		// audio
+		blackboard.aud.StopRattle();
 	}
 
 
