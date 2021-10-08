@@ -29,6 +29,9 @@ public class CharacterStateHurt : CharacterState
 
 		// sound
 		//blackboard.charAud.PlayLand();
+
+		// fx
+		blackboard.blood.Play();
 	}
 
 

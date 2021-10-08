@@ -64,6 +64,9 @@ public class CharacterStateDie : CharacterState
 
 		// anim
 		blackboard.anim.SetTrigger("Die");
+
+		// fx
+		blackboard.blood.Play();
 	}
 
 

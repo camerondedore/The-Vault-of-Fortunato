@@ -46,6 +46,12 @@ public class SkeletonStateDie : SkeletonState
 
 		// gib
 		blackboard.gibber.InitiateGibs();
+
+		// fx
+		blackboard.boneSplinters.Play();
+
+		// clean
+		Destroy(transform.root.gameObject, 10);
 	}
 
 

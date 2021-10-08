@@ -28,6 +28,9 @@ public class SkeletonStateHurt : SkeletonState
 
 		// sound
 		//blackboard.charAud.PlayLand();
+
+		// fx
+		blackboard.boneSplinters.Play();
 	}
 
 
