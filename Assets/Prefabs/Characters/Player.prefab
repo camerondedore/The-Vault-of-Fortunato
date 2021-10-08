@@ -907,6 +907,7 @@ MonoBehaviour:
   cameraController: {fileID: 936047520067766721}
   input: {fileID: 936047519795113867}
   cameraPivotController: {fileID: 936047521743221975}
+  cameraPivot: {fileID: 936047520599485366}
   feet: {fileID: 936047520710181734}
   anim: {fileID: 6743885265733001290}
   tracker: {fileID: 936047521086970914}

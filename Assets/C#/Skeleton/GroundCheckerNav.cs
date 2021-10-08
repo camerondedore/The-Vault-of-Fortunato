@@ -27,9 +27,9 @@ public class GroundCheckerNav : MonoBehaviour
 		var controller = transform.root.GetComponent<NavMeshAgent>();
 		
 		// get distance for sphere cast
-		distance = controller.height - controller.baseOffset;
+		distance = controller.height * 0.5f + 0.1f;
 		// get distance for ray cast
-		rayDistance = controller.height * 0.5f + 0.02f;
+		rayDistance = controller.height * 0.5f + 0.1f;
 	}
 
 

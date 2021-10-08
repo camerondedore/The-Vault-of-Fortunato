@@ -23,6 +23,7 @@ public class CharacterBlackboard : MonoBehaviour
 	public CameraControllerThirdPerson cameraController;
 	public CharacterInput input;
 	public CameraPivotController cameraPivotController;
+	public Transform cameraPivot;
 	public GroundChecker feet;
 	public Animator anim;
 	public VelocityTracker tracker;

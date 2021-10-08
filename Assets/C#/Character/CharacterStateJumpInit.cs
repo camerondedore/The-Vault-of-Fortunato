@@ -14,7 +14,7 @@ public class CharacterStateJumpInit : CharacterState
 	public override void RunState()
 	{
 		// get input
-		var moveDir = Camera.main.transform.TransformDirection(blackboard.input.moveDirection);
+		var moveDir = blackboard.cameraPivot.TransformDirection(blackboard.input.moveDirection);
 		moveDir.y = 0;
 		moveDir = Vector3.ClampMagnitude(moveDir, 1);
 

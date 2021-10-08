@@ -85,6 +85,14 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		// apply look
 		//mainCamera.LookAt(cameraY);
 		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.deltaTime * 5);
+
+		// update camera point
+		var newCameraPointPosition = followPosition;
+		newCameraPointPosition.y = cameraPoint.position.y;
+		cameraPoint.position = newCameraPointPosition;
+		var newCameraPointForward = cameraY.position - cameraPoint.position;
+		newCameraPointForward.y = 0;
+		cameraPoint.forward = newCameraPointForward;
     }
 
 
