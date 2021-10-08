@@ -34,10 +34,10 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		range = Vector3.Distance(transform.position, cameraPoint.position);
 		rangeFlat = range * Mathf.Cos(angle * Mathf.PI / 180);
 
-		// initialize camera look
-		mainCamera.LookAt(cameraY);
-
 		followPosition = mainCamera.position;
+
+		// initialize camera look
+		LateUpdate();
     }
 
     
@@ -83,7 +83,6 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		}
 
 		// apply look
-		//mainCamera.LookAt(cameraY);
 		mainCamera.forward = Vector3.Lerp(mainCamera.forward, cameraY.position - mainCamera.position, Time.deltaTime * 5);
 
 		// update camera point
