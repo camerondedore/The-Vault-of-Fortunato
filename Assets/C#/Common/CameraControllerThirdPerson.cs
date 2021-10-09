@@ -38,6 +38,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 
 		// initialize camera look
 		LateUpdate();
+		mainCamera.forward = cameraY.position - mainCamera.position;
     }
 
     
