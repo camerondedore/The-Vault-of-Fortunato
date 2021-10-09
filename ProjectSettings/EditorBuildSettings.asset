@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cemetery.unity
     guid: 232fca9fe3e273041a4b33e948d20670
   - enabled: 1
+    path: Assets/Scenes/Manor.unity
+    guid: 8800af67caff519498bb0b2bba9de2b6
+  - enabled: 1
     path: Assets/Scenes/Hedge.unity
     guid: ee7d605c645d85141bb36193a99b5b5a
   m_configObjects:
