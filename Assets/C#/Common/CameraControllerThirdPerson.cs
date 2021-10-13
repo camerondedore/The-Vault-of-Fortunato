@@ -52,7 +52,7 @@ public class CameraControllerThirdPerson : MonoBehaviour
 		}
 
 		// apply look from input
-		followPosition += mainCamera.right * -PlayerInput.look.x * 0.5f * Time.deltaTime;
+		followPosition += mainCamera.right * -PlayerInput.look.x /** Settings.currentSettings.sensitivity*/ * 0.5f * Time.deltaTime;
 
 		// tether camera, set horizontal position, then vertical
         var newDirection = followPosition - transform.position;

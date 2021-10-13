@@ -9,7 +9,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class Settings : MonoBehaviour
 {
     
-	public static playerSettings currentSettings;
+	public static PlayerSettings currentSettings;
 	[SerializeField] PostProcessProfile ppp;
 	//static AmbientOcclusion ssao;
 	static Bloom bloom;
@@ -44,13 +44,13 @@ public class Settings : MonoBehaviour
 		{
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Application.persistentDataPath + "/settings.dwg", FileMode.Open);
-			currentSettings = (playerSettings)bf.Deserialize(file);
+			currentSettings = (PlayerSettings)bf.Deserialize(file);
 			file.Close();
 		}
 		else
 		{
 			// no settings exist
-			currentSettings = new playerSettings();
+			currentSettings = new PlayerSettings();
 		}
 
 		ApplySettings();
@@ -68,17 +68,18 @@ public class Settings : MonoBehaviour
 		QualitySettings.SetQualityLevel(Settings.currentSettings.quality);
 		//ssao.active = Settings.currentSettings.ssao;
 		bloom.active = Settings.currentSettings.bloom;
-		Look.lookSensitivity = Settings.currentSettings.sensitivity;
+		//Look.lookSensitivity = Settings.currentSettings.sensitivity;
 	}
 
 
 
 	[System.Serializable]
-	public class playerSettings
+	public class PlayerSettings
 	{
 		public int quality = 5;
-		public bool ssao = true,
-			bloom = true;
-		public float sensitivity = 10;
+		public bool bloom = true;
+			//ssao = true,
+			//fullscreen = true;
+		//public float sensitivity = 1;
 	}
 }
