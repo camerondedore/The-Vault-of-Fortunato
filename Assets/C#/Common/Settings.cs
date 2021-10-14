@@ -10,7 +10,8 @@ public class Settings : MonoBehaviour
 {
     
 	public static PlayerSettings currentSettings;
-	[SerializeField] PostProcessProfile ppp;
+	[SerializeField] 
+	PostProcessProfile ppp;
 	static Bloom bloom;
 
 
