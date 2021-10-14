@@ -81,7 +81,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6c2201f2a8da623418923f5f857c6b53, type: 3}
   slideSound: {fileID: 8300000, guid: 40df59fc7654e054eb25d3dc304ede04, type: 3}
   jumpSound: {fileID: 8300000, guid: c9725d2c8cd82fe4f91aa04fc25edebe, type: 3}
+  jumpSoundTerrain: {fileID: 8300000, guid: 0aecfe7056f7b9440ab071a8a400c873, type: 3}
   landSound: {fileID: 8300000, guid: 95ec72178a34af844b6ea863e9227a6e, type: 3}
+  landSoundTerrain: {fileID: 8300000, guid: bdb5be328f26580429c08e42568de7b8, type: 3}
   dieSound: {fileID: 8300000, guid: 170ec3d9291728541b18958a8ed02dcf, type: 3}
   meleeSounds:
   - {fileID: 8300000, guid: b32101bcd84145e45821eee0fa345804, type: 3}

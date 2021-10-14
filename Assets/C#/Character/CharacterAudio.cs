@@ -16,7 +16,9 @@ public class CharacterAudio : MonoBehaviour
 	public AudioClip[] stepSoundsTerrain;
 	public AudioClip slideSound,
 		jumpSound,
+		jumpSoundTerrain,
 		landSound,
+		landSoundTerrain,
 		dieSound;
 	public AudioClip[] meleeSounds;
 	int stepSoundIndex = 0,
@@ -31,12 +33,12 @@ public class CharacterAudio : MonoBehaviour
 
 
 
-	public void Step()
+	bool OnTerrain()
 	{
 		if(feet.checkFeet.collider == null && feet.checkFeetRay.collider == null)
 		{
 			// not on ground
-			return;
+			return false;
 		}
 
 		var col = feet.checkFeet.collider != null ? feet.checkFeet.collider : feet.checkFeetRay.collider;
@@ -44,12 +46,28 @@ public class CharacterAudio : MonoBehaviour
 		if(col.GetComponent<Terrain>() == null)
 		{
 			// hard surface
-			stepSoundIndex = aud.PlayOneShotFromArray(stepSounds, stepSoundIndex);
+			return false;
 		}
 		else
 		{
 			// terrain
+			return true;
+		}
+	}
+
+
+
+	public void Step()
+	{
+		if(OnTerrain())
+		{
+			// hard surface
 			stepSoundIndex = aud.PlayOneShotFromArray(stepSoundsTerrain, stepSoundIndex);
+		}
+		else
+		{
+			// terrain
+			stepSoundIndex = aud.PlayOneShotFromArray(stepSounds, stepSoundIndex);
 		}
 	}
 
@@ -80,14 +98,32 @@ public class CharacterAudio : MonoBehaviour
 
 	public void PlayJump()
 	{
-		aud.PlayOneShot(jumpSound);
+		if(OnTerrain())
+		{
+			// hard surface
+			aud.PlayOneShot(jumpSoundTerrain);
+		}
+		else
+		{
+			// terrain
+			aud.PlayOneShot(jumpSound);
+		}
 	}
 
 
 
 	public void PlayLand()
 	{
-		aud.PlayOneShot(landSound);
+		if(OnTerrain())
+		{
+			// hard surface
+			aud.PlayOneShot(landSoundTerrain);
+		}
+		else
+		{
+			// terrain
+			aud.PlayOneShot(landSound);
+		}
 	}
 
 
