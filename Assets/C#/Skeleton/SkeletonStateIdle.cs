@@ -10,7 +10,8 @@ public class SkeletonStateIdle : SkeletonState
 	// float startTime,
 	// 	idleTime;
 	[SerializeField]
-	float aggroRange = 4;
+	float aggroRange = 4,
+		verticalAggroRange = 2;
 
 
 
@@ -51,7 +52,10 @@ public class SkeletonStateIdle : SkeletonState
 		// 	return blackboard.patrolState;
 		// }
 
-		if(blackboard.player.GetComponent<Health>().hitPoints > 0 && Vector3.Distance(transform.root.position, blackboard.player.position) < aggroRange)
+		var distanceToPlayer = Vector3.Distance(transform.root.position, blackboard.player.position);
+		var verticalDistanceToPlayer = Mathf.Abs(transform.root.position.y - blackboard.player.position.y);
+
+		if(blackboard.player.GetComponent<Health>().hitPoints > 0 && distanceToPlayer < aggroRange && verticalDistanceToPlayer < verticalAggroRange)
 		{
 			// seek
 			return blackboard.seekState;
