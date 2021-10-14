@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c371cf03e11a7c24a80d0752c1585211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  qualityText: {fileID: 1853734066}
 --- !u!4 &150939738
 Transform:
   m_ObjectHideFlags: 0
@@ -241,7 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f4a19a55f4ed6409709ae8bc248b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qualityText: {fileID: 1853734066}
   bloomToggle: {fileID: 213057342}
 --- !u!1 &213057340
 GameObject:

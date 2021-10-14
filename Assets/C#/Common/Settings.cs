@@ -11,14 +11,12 @@ public class Settings : MonoBehaviour
     
 	public static PlayerSettings currentSettings;
 	[SerializeField] PostProcessProfile ppp;
-	//static AmbientOcclusion ssao;
 	static Bloom bloom;
 
 
 
 	void Awake()
 	{
-		//ppp.TryGetSettings(out ssao);
 		ppp.TryGetSettings(out bloom);
 
 		LoadSettings();
@@ -54,11 +52,6 @@ public class Settings : MonoBehaviour
 		}
 
 		ApplySettings();
-
-		// Debug.Log(currentSettings.quality);
-		// Debug.Log(currentSettings.ssao);
-		// Debug.Log(currentSettings.bloom);
-		// Debug.Log(currentSettings.sensitivity);
 	}
 
 
@@ -66,9 +59,7 @@ public class Settings : MonoBehaviour
 	public static void ApplySettings()
 	{
 		QualitySettings.SetQualityLevel(Settings.currentSettings.quality);
-		//ssao.active = Settings.currentSettings.ssao;
 		bloom.active = Settings.currentSettings.bloom;
-		//Look.lookSensitivity = Settings.currentSettings.sensitivity;
 	}
 
 
@@ -78,8 +69,5 @@ public class Settings : MonoBehaviour
 	{
 		public int quality = 5;
 		public bool bloom = true;
-			//ssao = true,
-			//fullscreen = true;
-		//public float sensitivity = 1;
 	}
 }

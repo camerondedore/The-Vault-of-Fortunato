@@ -1,11 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuButtons : MonoBehaviour
 {
     
+	[SerializeField] Text qualityText;
 
+
+
+	void Update()
+	{
+		// update quality text
+		var targetQualityText = QualitySettings.names[Settings.currentSettings.quality];
+		
+		if(targetQualityText != qualityText.text)
+		{
+			qualityText.text = targetQualityText;
+		}
+	}
 
 
 
