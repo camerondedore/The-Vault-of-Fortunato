@@ -5,11 +5,11 @@ using UnityEngine;
 public class CharacterStateFall : CharacterState
 {
 
-	//[SerializeField]
-	//ParticleSystem fallDust;
 	[SerializeField]
-	float fallResponseSpeed = 3;
-		//fallDustHeight = 4;
+	ParticleSystem fallDust;
+	[SerializeField]
+	float fallResponseSpeed = 3,
+		fallDustHeight = 3;
 	float startAltitude;
 
 
@@ -83,10 +83,10 @@ public class CharacterStateFall : CharacterState
 	public override void EndState()
 	{
 		// fall dust
-		//if(startAltitude - transform.position.y >= fallDustHeight )
-		//{
-			//fallDust.Play();
-		//}
+		if(startAltitude - transform.position.y >= fallDustHeight )
+		{
+			fallDust.Play();
+		}
 	}
 
 

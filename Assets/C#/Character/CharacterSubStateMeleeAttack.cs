@@ -6,6 +6,10 @@ public class CharacterSubStateMeleeAttack : CharacterState
 {
 
 	[SerializeField]
+	TrailRenderer meleeTrail;
+	[SerializeField]
+	Melee melee;
+	[SerializeField]
 	float attackTime = 0.4f,
 		meleeTime = 0.2f;
 	float startTime,
@@ -40,7 +44,7 @@ public class CharacterSubStateMeleeAttack : CharacterState
 			meleeDamage = true;
 			
 			// attack
-			blackboard.melee.Attack();
+			melee.Attack();
 		}
 
 		if(blackboard.fire1Disconnector.Trip(blackboard.input.fire1) && Time.time > startTime + attackTime * 0.75f)
@@ -73,7 +77,7 @@ public class CharacterSubStateMeleeAttack : CharacterState
 		blackboard.targetVelocity = Vector3.zero;
 
 		// start trail
-		blackboard.meleeTrail.emitting = true;
+		meleeTrail.emitting = true;
 	}
 
 
@@ -93,8 +97,8 @@ public class CharacterSubStateMeleeAttack : CharacterState
 		chainAttack = false;
 
 		// stop trail
-		blackboard.meleeTrail.emitting = false;
-		blackboard.meleeTrail.Clear();
+		meleeTrail.emitting = false;
+		meleeTrail.Clear();
 	}
 
 

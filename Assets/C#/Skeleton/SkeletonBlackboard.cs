@@ -17,7 +17,6 @@ public class SkeletonBlackboard : MonoBehaviour
 		dieState;
 	public Transform player;
 	public Animator anim;
-	public TrailRenderer meleeTrail;
 	public SkeletonGibs gibber;
 	public ParticleSystem boneSplinters;
 	public GameObject mesh;

@@ -29,14 +29,11 @@ public class CharacterBlackboard : MonoBehaviour
 	public VelocityTracker tracker;
 	public CharacterAudio charAud;
 	public Transform characterMesh;
-	public RendererFlasher characterFlasher;
 	public ParticleSystem blood;
-	public TrailRenderer meleeTrail;
 	public float speed = 6,
 		lookSpeed = 10,
 		stepHeight = 0.3f,
 		maxSlope = 80; // this maxSlope is for checking if falling should turn into sliding, where as the ground checker maxAngle is for being grounded
-	public Melee melee;
 	[HideInInspector]
 	public float y,
 		jumpStartAltitude;

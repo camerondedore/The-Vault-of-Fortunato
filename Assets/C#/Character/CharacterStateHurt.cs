@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterStateHurt : CharacterState
 {
    
+	[SerializeField]
+	RendererFlasher characterFlasher;
 	float startTime = 0;
 
 
@@ -25,10 +27,10 @@ public class CharacterStateHurt : CharacterState
 		startTime = Time.time;
 
 		// flash
-		blackboard.characterFlasher.startTime = Time.time;
+		characterFlasher.startTime = Time.time;
 
 		// sound
-		//blackboard.charAud.PlayLand();
+		blackboard.charAud.PlayLand();
 
 		// fx
 		blackboard.blood.Play();

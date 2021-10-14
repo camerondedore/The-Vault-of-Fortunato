@@ -6,6 +6,8 @@ public class SkeletonStateAttack : SkeletonState
 {
 
 	[SerializeField]
+	TrailRenderer meleeTrail;
+	[SerializeField]
 	float attackTime = 0.4f,
 		meleeTime = 0.2f,
 		damageRange = 1,
@@ -52,7 +54,7 @@ public class SkeletonStateAttack : SkeletonState
 		meleeDamage = false;
 
 		// start trail
-		blackboard.meleeTrail.emitting = true;
+		meleeTrail.emitting = true;
 
 		// aim
 		var lookDirection = blackboard.player.position - transform.root.position;
@@ -73,8 +75,8 @@ public class SkeletonStateAttack : SkeletonState
 
 
 		// stop trail
-		blackboard.meleeTrail.emitting = false;
-		blackboard.meleeTrail.Clear();
+		meleeTrail.emitting = false;
+		meleeTrail.Clear();
 	}
 
 

@@ -964,7 +964,6 @@ MonoBehaviour:
   dieState: {fileID: 7295908236698477047}
   player: {fileID: 0}
   anim: {fileID: 8607194331714605451}
-  meleeTrail: {fileID: 7793812263157408648}
   gibber: {fileID: 1545170664226656006}
   boneSplinters: {fileID: 929450085384183903}
   mesh: {fileID: 3087527453587362123}
@@ -1025,6 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackboard: {fileID: 0}
+  meleeTrail: {fileID: 7793812263157408648}
   attackTime: 0.8333333
   meleeTime: 0.56666666
   damageRange: 1.4

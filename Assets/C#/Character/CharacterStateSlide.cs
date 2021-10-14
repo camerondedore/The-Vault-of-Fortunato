@@ -5,8 +5,8 @@ using UnityEngine;
 public class CharacterStateSlide : CharacterState
 {
     
-	//[SerializeField]
-	//ParticleSystem feetDust;
+	[SerializeField]
+	ParticleSystem feetDust;
 	Vector3 oldPosition;
 	float clearTimeStart = 0,
 		ticsToJump = 0;
@@ -76,7 +76,7 @@ public class CharacterStateSlide : CharacterState
 		blackboard.anim.SetTrigger("Slide");
 
 		// dust
-		//feetDust.Play();
+		feetDust.Play();
 
 		// sound
 		blackboard.charAud.SlideStart();
@@ -90,7 +90,8 @@ public class CharacterStateSlide : CharacterState
 	public override void EndState()
 	{
 		// dust
-		//feetDust.Stop();
+		feetDust.Stop();
+		
 		// sound
 		blackboard.charAud.SlideStop();
 	}
