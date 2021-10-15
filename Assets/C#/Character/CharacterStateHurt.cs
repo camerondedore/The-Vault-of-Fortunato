@@ -7,6 +7,10 @@ public class CharacterStateHurt : CharacterState
    
 	[SerializeField]
 	RendererFlasher characterFlasher;
+	[SerializeField]
+	Collider hitbox;
+	[SerializeField]
+	CharacterHealth health;
 	float startTime = 0;
 
 
@@ -34,13 +38,19 @@ public class CharacterStateHurt : CharacterState
 
 		// fx
 		blackboard.blood.Play();
+
+		// temporary invulnerability
+		hitbox.enabled = false;
+		health.vulnerable = false;
 	}
 
 
 
 	public override void EndState()
 	{
-		
+		// vulnerable
+		hitbox.enabled = true;
+		health.vulnerable = true;
 	}
 
 

@@ -43,8 +43,8 @@ public class SkeletonStateIdle : SkeletonState
 
 		if(blackboard.player.GetComponent<Health>().hitPoints > 0 && distanceToPlayer < aggroRange && verticalDistanceToPlayer < verticalAggroRange)
 		{
-			// seek
-			return blackboard.seekState;
+			// alert
+			return blackboard.alertState;
 		}
 
 		return this;

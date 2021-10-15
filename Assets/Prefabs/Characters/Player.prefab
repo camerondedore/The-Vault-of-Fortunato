@@ -1084,6 +1084,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackboard: {fileID: 0}
   characterFlasher: {fileID: 1476428871}
+  hitbox: {fileID: 6325658678146684431}
+  health: {fileID: 3063515334981651894}
 --- !u!114 &936047520851847133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,6 +1306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 3
   maxHitPoints: 3
+  vulnerable: 1
   blackboard: {fileID: 936047520851847110}
 --- !u!114 &766617951
 MonoBehaviour:

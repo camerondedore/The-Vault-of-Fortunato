@@ -902,6 +902,7 @@ GameObject:
   - component: {fileID: 7295908236698477046}
   - component: {fileID: 7295908236698477049}
   - component: {fileID: 7295908236698477040}
+  - component: {fileID: 7252406624272125248}
   - component: {fileID: 7295908236698477042}
   - component: {fileID: 7295908236698477045}
   - component: {fileID: 7295908236698477044}
@@ -957,6 +958,7 @@ MonoBehaviour:
   agent: {fileID: 7295908236838456711}
   tracker: {fileID: 7295908236838456710}
   idleState: {fileID: 7295908236698477040}
+  alertState: {fileID: 7252406624272125248}
   seekState: {fileID: 7295908236698477042}
   attackState: {fileID: 7295908236698477045}
   hurtState: {fileID: 7295908236698477044}
@@ -982,6 +984,19 @@ MonoBehaviour:
   blackboard: {fileID: 0}
   aggroRange: 6.6666665
   verticalAggroRange: 2
+--- !u!114 &7252406624272125248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295908236698477051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64fef24dc61a22349aa7de58ef96caee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blackboard: {fileID: 0}
 --- !u!114 &7295908236698477042
 MonoBehaviour:
   m_ObjectHideFlags: 0

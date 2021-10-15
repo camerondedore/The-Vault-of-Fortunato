@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterHealth : Health
 {
     
+	public bool vulnerable = true;
 	[SerializeField]
 	CharacterBlackboard blackboard;
 
@@ -20,6 +21,11 @@ public class CharacterHealth : Health
 
 	public override void Damage(float dmg)
 	{
+		if(!vulnerable)
+		{
+			return;
+		}
+
 		hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
 
 		if(hitPoints == 0 && !base.dead)
